@@ -31,7 +31,7 @@ object FrmHaupt: TFrmHaupt
     AutoSize = True
     Position.X = 48.000000000000000000
     Position.Y = 144.000000000000000000
-    Size.Width = 110.000000000000000000
+    Size.Width = 107.000000000000000000
     Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
     TextSettings.WordWrap = False
@@ -64,5 +64,17 @@ object FrmHaupt: TFrmHaupt
     Size.Width = 121.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
+  end
+  object ComboFaelle: TComboBox
+    HelpType = htKeyword
+    Items.Strings = (
+      'Brief'
+      'Mahnung'
+      'Vollstreckung'
+      'Au'#223'ergerichtlicher Vergleich'
+      'Gerichtsverfahren')
+    Position.X = 208.000000000000000000
+    Position.Y = 40.000000000000000000
+    TabOrder = 7
   end
 end

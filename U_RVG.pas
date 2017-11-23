@@ -1,13 +1,16 @@
-unit U_RVG;
+﻿unit U_RVG;
 
 interface
 
-function calcRVG(streitwert: integer):integer;
+uses System.SysUtils;
+
+function calcEinfach(streitwert: real):real;
+function calcBrief(Streitwert: real):real;
 
 implementation
 
 // Funktion um die Einfachgebühr zu berechnen
-function calcRVG(streitwert: integer):integer;
+function calcEinfach(streitwert: real):real;
 var
   currentSW, ergebnis: integer;
 begin
@@ -56,6 +59,11 @@ begin
   end;
 
   result:= ergebnis;
+end;
+
+function calcBrief(Streitwert: real):real;
+begin
+  result:= calcEinfach(Streitwert) * 1.3;
 end;
 
 end.
