@@ -7,7 +7,7 @@ uses
 
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox;
+  FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox, FMX.ListBox;
 
 type
   TFrmHaupt = class(TForm)
@@ -17,6 +17,7 @@ type
     BtnRVG: TButton;
     LblRVG: TLabel;
     EdtStreitwert: TEdit;
+    ComboFaelle: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure BtnLeitzinsClick(Sender: TObject);
     procedure BtnRVGClick(Sender: TObject);
@@ -39,8 +40,8 @@ implementation
 procedure TFrmHaupt.BtnRVGClick(Sender: TObject);
 begin
   if EdtStreitwert.Text <> '' then
-  begin
-    LblRVG.Text:= IntToStr(calcRVG(StrToInt(EdtStreitwert.Text))) + '€';
+  begin                      //bis jetzt berechnet dies die Kosten eines Briefes.
+    LblRVG.Text:= FloatToStr(calcBrief(StrToInt(EdtStreitwert.Text))) + '€';
   end;
 end;
 
