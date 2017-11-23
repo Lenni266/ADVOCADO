@@ -55,7 +55,7 @@ procedure TFrmHaupt.BtnLeitzinsClick(Sender: TObject);
 var
   FR: real;
 begin
-  if FRUpdater.HasInternet then
+  if FRUpdater.HasInternet then    //niels ist cool
     FRUpdater.updateFR;
 
   if FRUpdater.FileExist then
