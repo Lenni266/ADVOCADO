@@ -6,6 +6,7 @@ uses System.SysUtils;
 
 function calcEinfach(streitwert: real):real;
 function calcBrief(Streitwert: real):real;
+function calcMahnungBrief(Streitwert: real):real;
 
 implementation
 
@@ -63,7 +64,29 @@ end;
 
 function calcBrief(Streitwert: real):real;
 begin
-  result:= calcEinfach(Streitwert) * 1.3;
+  if calcEinfach(Streitwert) * 0.26 < 20 then
+    result:= calcEinfach(Streitwert) * 1.26  //Überprüfungswürdig (besser gesagt: definitv falsch
+  else result:= calcEInfach(Streitwert) + 20;
 end;
+
+function calcMahnungBrief(Streitwert: real):real;
+begin
+  result:=(calcEinfach(Streitwert) * 1.0) + (0.5 * calcBrief(Streitwert));
+end;
+
+{function calcVollstreckung(Streitwert: real):real;
+begin
+  result:=calcEinfach(Streitwert) *
+end;
+
+function calcAussergerichtlich(Streitwert: real):real;
+begin
+  result:=calcEinfach(Streitwert) *
+end;
+
+function calcGericht(Streitwert: real):real;
+begin
+  result:=calcEinfach(Streitwert) *
+end;   }
 
 end.

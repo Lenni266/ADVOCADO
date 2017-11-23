@@ -68,13 +68,34 @@ object FrmHaupt: TFrmHaupt
   object ComboFaelle: TComboBox
     HelpType = htKeyword
     Items.Strings = (
+      'Fall ausw'#228'hlen'
       'Brief'
-      'Mahnung'
-      'Vollstreckung'
-      'Au'#223'ergerichtlicher Vergleich'
-      'Gerichtsverfahren')
+      '2)      Brief-Mahn'
+      'a.      Brief-Mahn-Klage-Gericht'
+      'b.      Brief-Mahn-Klage-Gericht-Verlieren'
+      'c.      Brief-Mahn-Klage-Vergleich'
+      'd.      Brief-Mahn-Klage-Berufung'
+      '3)      Brief-Mahn-Voll'
+      'a.      Brief-Mahn-VollBesch-Klage-Gericht'
+      'b.      Brief-Mahn-VollBesch-Klage-Gericht-Verlieren'
+      'c.      Brief-Mahn-VollBesch-Klage-Vergleich'
+      'd.      Brief-Mahn-VollBesch-Klage-Berufung'
+      ' i.      Brief-Mahn-VollBesch-Voll'
+      '4)      Brief-Au'#223'GerVerg'
+      'a.      Brief-Au'#223'GerVerg-VollBesch-Voll gibt es den?'
+      'b.      Brief-Au'#223'GerVerg-Voll'
+      '5)      Klage-Gericht'
+      'a.      Klage-Gericht-Verlieren'
+      'b.      Klage-Vergleich'
+      'c.      Klage-Berufung'
+      
+        'd.      Klage-Gericht-Voll gibt es den? (Wenn ja, auch bei 2. un' +
+        'd 3.)')
     Position.X = 208.000000000000000000
     Position.Y = 40.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 7
   end
 end
