@@ -40,8 +40,25 @@ implementation
 procedure TFrmHaupt.BtnRVGClick(Sender: TObject);
 begin
   if EdtStreitwert.Text <> '' then
-  begin                      //bis jetzt berechnet dies die Kosten eines Briefes.
-    LblRVG.Text:= FloatToStr(calcBrief(StrToInt(EdtStreitwert.Text))) + '€';
+  begin
+    case ComboFaelle.ItemIndex of
+      0: EdtStreitwert.Text:= 'Bitte zuerst einen Fall auswählen!';
+      1:  begin
+            LblRVG.Text:= FloatToStr(calcBrief(StrToInt(EdtStreitwert.Text))) + '€';
+          end;
+      2:  begin
+            LblRVG.Text:= FloatToStr(calcMahnungBrief(StrToInt(EdtStreitwert.Text))) + '€';
+          end;
+      3:  begin
+
+          end;
+      4:  begin
+
+          end;
+      5:  begin
+
+          end;
+    end;
   end;
 end;
 
