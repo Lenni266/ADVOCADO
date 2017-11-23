@@ -59,7 +59,6 @@ end;
 function TFRUpdater.readFR:real;
 var
   data: TStringList;
-  leitzins: real;
 begin
   data:= TStringList.Create;
   data.LoadFromFile(FFileName);
