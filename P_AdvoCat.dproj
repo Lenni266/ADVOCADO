@@ -225,6 +225,8 @@
             <Form>FrmHaupt</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="U_FRUpdater.pas"/>
+        <DCCReference Include="U_RVG.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

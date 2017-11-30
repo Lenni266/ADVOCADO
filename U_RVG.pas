@@ -4,14 +4,18 @@ interface
 
 uses System.SysUtils;
 
-function calcEinfach(streitwert: real):real;
-function calcBrief(Streitwert: real):real;
-function calcMahnungBrief(Streitwert: real):real;
+{ Berechnet die Einfachgebuehr nach dem RVG
+  @param streitwert Der Streitwert des Falls.
+  @returns Die berechnete Einfachgebuehr als @bold(Float). }
+function calcEinfach(streitwert: real): real;
+
+function calcBrief(streitwert: real): real;
+function calcMahnungBrief(streitwert: real): real;
 
 implementation
 
-// Funktion um die Einfachgebühr zu berechnen
-function calcEinfach(streitwert: real):real;
+
+function calcEinfach(streitwert: real): real;
 var
   currentSW, ergebnis: integer;
 begin
@@ -62,14 +66,14 @@ begin
   result:= ergebnis;
 end;
 
-function calcBrief(Streitwert: real):real;
+function calcBrief(streitwert: real): real;
 begin
   if calcEinfach(Streitwert) * 0.26 < 20 then
-    result:= calcEinfach(Streitwert) * 1.26  //Überprüfungswürdig (besser gesagt: definitv falsch
+    result:= calcEinfach(Streitwert) * 1.26  //Überprüfungswürdig (besser gesagt: definitv falsch)
   else result:= calcEInfach(Streitwert) + 20;
 end;
 
-function calcMahnungBrief(Streitwert: real):real;
+function calcMahnungBrief(streitwert: real): real;
 begin
   result:=(calcEinfach(Streitwert) * 1.0) + (0.5 * calcBrief(Streitwert));
 end;
