@@ -1,7 +1,7 @@
 [Main]
 StoreRelativePaths=1
-Language=en
-OutputDir=..\doc
+Language=de
+OutputDir=..\docs
 GenerateFormat=0
 ProjectName=
 Verbosity=2
@@ -9,7 +9,7 @@ ClassMembers_0=1
 ClassMembers_1=1
 ClassMembers_2=1
 ClassMembers_3=0
-ClassMembers_4=0
+ClassMembers_4=1
 ClassMembers_5=0
 ClassMembers_6=1
 ClassMembers_7=0
