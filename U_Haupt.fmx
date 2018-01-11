@@ -79,6 +79,7 @@ object FrmHaupt: TFrmHaupt
       'Brief-Au'#223'GerVerg-VollB-Voll'
       'Klage-Vergleich'
       'Klage-Berufung')
+    ItemIndex = 0
     Position.X = 184.000000000000000000
     Position.Y = 40.000000000000000000
     Size.Width = 297.000000000000000000

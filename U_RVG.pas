@@ -10,7 +10,7 @@ uses System.SysUtils;
 function calcEinfach(streitwert: real): real;
 function calcGKG(streitwert: real): real;
 
-function calcBrief(streitwert: real): real;                    //
+function calcBrief(streitwert: real): real;                    //alles mit Strichen funktioniert
 function calcBriefMahn(streitwert: real): real;                  //
 function calcBriefMahnKlageGer(streitwert: real): real;            //
 function calcBriefMahnKlageGerLose(streitwert: real): real;          //
