@@ -31,6 +31,8 @@ type
         @returns Der Leitzins als @bold(Float). }
       function readFR: real;
 
+      var FR: real;
+
       { Überprüft ob Verbindung zu @link(FURL) besteht.
         @returns Falls Verbindung besteht: @true, ansonsten @false. }
       function HasInternet: boolean;
@@ -83,11 +85,15 @@ end;
 function TFRUpdater.readFR:real;
 var
   data: TStringList;
+  output: real;
 begin
   data:= TStringList.Create;
   data.LoadFromFile(FFileName);
 
-  result:=StrToFloat(data[0]);
+  output:=StrToFloat(data[0]);
+  FR:=output;
+  result:=output;
+
 end;
 
 // ueberpruefen, ob Verbindung zur API besteht
