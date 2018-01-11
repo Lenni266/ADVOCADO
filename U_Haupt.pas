@@ -64,7 +64,19 @@ begin
             LblRVG.Text:= FloatToStr(calcBriefMahnKlageGerLose(StrToFloat(EdtStreitwert.Text))) + '€';
           end;
       5:  begin
-
+            LblRVG.Text:= FloatToStr(calcBriefAusGerVerg(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      6:  begin
+            LblRVG.Text:= FloatToStr(calcBriefAusGerVergVollb(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      7:  begin
+            LblRVG.Text:= FloatToStr(calcBriefAusGerVergVollbVoll(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      8:  begin
+            LblRVG.Text:= FloatToStr(calcKlageVergl(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      9:  begin
+            LblRVG.Text:= FloatToStr(calcKlageBeruf(StrToFloat(EdtStreitwert.Text))) + '€';
           end;
     end;
   end;

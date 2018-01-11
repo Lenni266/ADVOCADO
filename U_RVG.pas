@@ -10,10 +10,10 @@ uses System.SysUtils;
 function calcEinfach(streitwert: real): real;
 function calcGKG(streitwert: real): real;
 
-function calcBrief(streitwert: real): real;
-function calcBriefMahn(streitwert: real): real;
-function calcBriefMahnKlageGer(streitwert: real): real;
-function calcBriefMahnKlageGerLose(streitwert: real): real;
+function calcBrief(streitwert: real): real;                    //
+function calcBriefMahn(streitwert: real): real;                  //
+function calcBriefMahnKlageGer(streitwert: real): real;            //
+function calcBriefMahnKlageGerLose(streitwert: real): real;          //
 function calcBriefMahnKlageVergl(streitwert: real): real;
 function calcBriefMahnKlageBeruf(streitwert: real): real;
 
@@ -24,14 +24,14 @@ function calcBriefMahnKlageVollbKlageVergl(streitwert: real): real;
 function calcBriefMahnKlageVollbKlageBeruf(streitwert: real): real;
 function calcBriefMahnKlageVollbVoll(streitwert: real): real;
 
-function calcBriefAusGerVerg(streitwert: real): real;
-function calcBriefAusGerVergVollb(streitwert: real): real;
-function calcBriefAusGerVergVollbVoll(streitwert: real): real;
+function calcBriefAusGerVerg(streitwert: real): real;              //
+function calcBriefAusGerVergVollb(streitwert: real): real;           //
+function calcBriefAusGerVergVollbVoll(streitwert: real): real;         //
 
 function calcKlageGer(streitwert: real): real;
 function calcKlageGerLose(streitwert: real): real;
-function calcKlageVergl(streitwert: real): real;
-function calcKlageBeruf(streitwert: real): real;
+function calcKlageVergl(streitwert: real): real;                    //
+function calcKlageBeruf(streitwert: real): real;                      //
 function calcKlageGerVollb(streitwert: real): real;
 function calcKlageGerVollbVoll(streitwert: real): real;
 
@@ -231,7 +231,7 @@ end;
 
 function calcBriefAusGerVergVollbVoll(streitwert: real): real;
 var
-  VollKosten: real;   //UNBEDINGT 40% Streitwert oder 40% Einfachgebühr???????????
+  VollKosten: real;   //40% Streitwert oder 40% Einfachgebühr? EZB vor oder nach Steuern?
 begin                 //wirklich ezb-zins + 5%? oder purer zins? sind zinskosten auf richtige Stellen bezogen?
   VollKosten:= (0.3 * calcEinfach(streitwert) * 1.19 + 0.1 * calcEinfach(streitwert)) * (1 + (FRUpdater.FR / 100));
   result := calcBriefAusGerVerg(streitwert) + VollKosten; //no steuern, weil die in beidem schon drin sind
@@ -239,22 +239,22 @@ end;
 
 function calcKlageGer(streitwert: real): real;
 begin
-     //wie BriefMahnKlageGer (je nachdem, wie das zwischen Lose und Win oben geklärt wurde
-end;
+  //wie BriefMahnKlageGer, nur ohne Brief? (je nachdem, wie das zwischen Lose und Win oben geklärt wurde)
+end;
 
 function calcKlageGerLose(streitwert: real): real;
 begin
-    //wie BriefMahnKlageGerLose (je nachdem, wie das zwischen Lose und Win oben geklärt wurde
+  //wie BriefMahnKlageGerLose, nur ohne Brief? (je nachdem, wie das zwischen Lose und Win oben geklärt wurde)
 end;
 
 function calcKlageVergl(streitwert: real): real;
 begin
-  //result:= 3.5 *
+  result:= 3.5 * calcEinfach(streitwert) * 1.19;
 end;
 
 function calcKlageBeruf(streitwert: real): real;
 begin
-
+  result:= 5.3 * calcEinfach(streitwert) * 1.19;
 end;
 
 function calcKlageGerVollb(streitwert: real): real;
