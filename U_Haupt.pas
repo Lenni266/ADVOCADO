@@ -9,6 +9,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox, FMX.ListBox;
 
+var FRUpdater: TFRUpdater;
+
 type
   TFrmHaupt = class(TForm)
     BtnLeitzins: TButton;
@@ -22,45 +24,19 @@ type
     procedure BtnLeitzinsClick(Sender: TObject);
     procedure BtnRVGClick(Sender: TObject);
   private
-    { Private-Deklarationen }
+    function calcGebuehr:real;
   public
-    { Public-Deklarationen }
+
   end;
 
 var
   FrmHaupt: TFrmHaupt;
-  FRUpdater: TFRUpdater;
   URL, FileName: string;
 
 
 implementation
 
 {$R *.fmx}
-
-procedure TFrmHaupt.BtnRVGClick(Sender: TObject);
-begin
-  if EdtStreitwert.Text <> '' then
-  begin
-    case ComboFaelle.ItemIndex of
-      0: EdtStreitwert.Text:= 'Bitte zuerst einen Fall auswählen!';
-      1:  begin
-            LblRVG.Text:= FloatToStr(calcBrief(StrToInt(EdtStreitwert.Text))) + '€';
-          end;
-      2:  begin
-            LblRVG.Text:= FloatToStr(calcMahnungBrief(StrToInt(EdtStreitwert.Text))) + '€';
-          end;
-      3:  begin
-
-          end;
-      4:  begin
-
-          end;
-      5:  begin
-
-          end;
-    end;
-  end;
-end;
 
 procedure TFrmHaupt.FormCreate(Sender: TObject);
 begin
@@ -69,11 +45,39 @@ begin
   FRUpdater:= TFRUpdater.Create(URL, FileName);
 end;
 
+procedure TFrmHaupt.BtnRVGClick(Sender: TObject);
+begin
+  if EdtStreitwert.Text <> '' then
+  begin
+    case ComboFaelle.ItemIndex of
+      0: EdtStreitwert.Text:= 'Bitte zuerst einen Fall auswählen!';
+      1:  begin
+            LblRVG.Text:= FloatToStr(calcBrief(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      2:  begin
+            LblRVG.Text:= FloatToStr(calcBriefMahn(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      3:  begin
+            LblRVG.Text:= FloatToStr(calcBriefMahnKlageGer(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      4:  begin
+            LblRVG.Text:= FloatToStr(calcBriefMahnKlageGerLose(StrToFloat(EdtStreitwert.Text))) + '€';
+          end;
+      5:  begin
+
+          end;
+    end;
+  end;
+
+end;
+
+
+
 procedure TFrmHaupt.BtnLeitzinsClick(Sender: TObject);
 var
   FR: real;
 begin
-  if FRUpdater.HasInternet then    //niels ist cool
+  if FRUpdater.HasInternet then
     FRUpdater.updateFR;
 
   if FRUpdater.FileExist then
@@ -83,6 +87,11 @@ begin
   end
   else
     LblLeitzins.Text:= 'Keine Verbindung zur API und Leitzins nicht lokal vorhanden';
+end;
+
+function TFrmHaupt.calcGebuehr:real;
+begin
+
 end;
 
 end.
