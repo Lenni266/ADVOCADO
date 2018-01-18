@@ -57,6 +57,7 @@ constructor TFRUpdater.Create(URL: string; FileName: string);
 begin
   FURL:= URL;
   FFileName:= GetCurrentDir + '\' + FileName;
+
 end;
 
 // Leitzins herunterladen und in Datei in aktuellen Verzeichnis, in dem das Programm ausgefuehrt wird, schreiben
@@ -93,7 +94,6 @@ begin
   output:=StrToFloat(data[0]);
   FR:=output;
   result:=output;
-
 end;
 
 // ueberpruefen, ob Verbindung zur API besteht

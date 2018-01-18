@@ -37,7 +37,7 @@ function calcKlageGerVollbVoll(streitwert: real): real;
 
 implementation
 
-uses U_Haupt;
+uses U_Uebersicht;
 
 function calcEinfach(streitwert: real): real;
 var
