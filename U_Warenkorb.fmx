@@ -10,13 +10,46 @@ object FWare: TFWare
   OnClose = FormClose
   DesignerMasterStyle = 0
   object BtnBack: TButton
-    Position.X = 32.000000000000000000
-    Position.Y = 384.000000000000000000
+    Position.X = 72.000000000000000000
+    Position.Y = 360.000000000000000000
     Size.Width = 169.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     Text = 'Weiteres hinzuf'#252'gen'
     OnClick = BtnBackClick
+  end
+  object StrGrd: TStringGrid
+    Position.X = 72.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 465.000000000000000000
+    Size.Height = 225.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    RowCount = 1
+    RowHeight = 21.000000000000000000
+    object StringColumn1: TStringColumn
+      Size.Width = 400.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object StringColumn2: TStringColumn
+      Position.X = 400.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object BtnDel: TButton
+    Position.X = 368.000000000000000000
+    Position.Y = 360.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Liste leeren'
+    OnClick = BtnDelClick
   end
 end

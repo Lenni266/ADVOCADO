@@ -33,7 +33,7 @@ implementation
 
 uses U_Uebersicht;
 
-procedure TFSettings.BtnBackClick(Sender: TObject);
+procedure TFSettings.BtnBackClick(Sender: TObject); //Problem: bei mir schmiert dann alles ab
 begin
   FSettings.Hide;
   FUebersicht.Show;

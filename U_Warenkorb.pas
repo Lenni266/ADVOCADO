@@ -5,17 +5,22 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation;
+  FMX.Controls.Presentation, FMX.Layouts, FMX.ListBox, System.Rtti, FMX.Grid;
 
 type
   TFWare = class(TForm)
     BtnBack: TButton;
+    StrGrd: TStringGrid;
+    StringColumn1: TStringColumn;
+    StringColumn2: TStringColumn;
+    BtnDel: TButton;
     procedure BtnBackClick(Sender: TObject);
+    procedure BtnDelClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private-Deklarationen }
   public
-    { Public-Deklarationen }
+
   end;
 
 var
@@ -28,13 +33,21 @@ implementation
 
 uses U_Uebersicht;
 
+
+
 procedure TFWare.BtnBackClick(Sender: TObject);
 begin
   FWare.Hide;
   FUebersicht.Show;
 end;
 
-
+procedure TFWare.BtnDelClick(Sender: TObject);
+begin
+  U_Uebersicht.anzahl:=0;
+  StrGrd.RowCount:=1;
+  StrGrd.Cells[0,0]:='';
+  StrGrd.Cells[1,0]:='';
+end;
 
 procedure TFWare.FormClose(Sender: TObject; var Action: TCloseAction);
 begin

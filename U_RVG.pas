@@ -10,16 +10,16 @@ uses System.SysUtils;
 function calcEinfach(streitwert: real): real;
 function calcGKG(streitwert: real): real;
 
-function calcBrief(streitwert: real): real; //stimmt tom
-function calcBriefMahn(streitwert: real): real; //stimmt Tom
-function calcBriefMahnvollbesch(streitwert: real): real; //stimmt Tom
-function calcBriefMahnvollbeschVoll(streitwert: real): real; //Stimmt tom
-function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
-function calcBriefMahnKlageVergleich(streitwert: real): real; //Stimmt Tom
-function calcBriefMahnKlageBerufung(streitwert: real): real;//stimmt tom
-function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
-function calcBriefMahnVollBeschKlageVergleich(streitwert: real): real;
-function calcBriefMahnVollBeschKlageBerufung(streitwert: real): real;
+  function calcBrief(streitwert: real): real; //stimmt tom
+  function calcBriefMahn(streitwert: real): real; //stimmt Tom
+  function calcBriefMahnvollbesch(streitwert: real): real; //stimmt Tom
+  function calcBriefMahnvollbeschVoll(streitwert: real): real; //Stimmt tom
+  function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
+  function calcBriefMahnKlageVergleich(streitwert: real): real; //Stimmt Tom
+  function calcBriefMahnKlageBerufung(streitwert: real): real;//stimmt tom
+  function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
+  function calcBriefMahnVollBeschKlageVergleich(streitwert: real): real;
+  function calcBriefMahnVollBeschKlageBerufung(streitwert: real): real;
 function calcKlageGerichtVerlieren(streitwert: real): real;
 function calcKlageVergleich(streitwert: real): real;
 function calcKlageBerufung(streitwert: real): real;
