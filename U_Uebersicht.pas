@@ -27,6 +27,7 @@ type
     procedure Ware;
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure add(Fall:string; kosten:real);
   private
     { Private-Deklarationen }
   public
@@ -37,13 +38,15 @@ var
   FUebersicht: TFUebersicht;
   URL: string;
   FileName: string;
+  anzahl: integer;
   FRUpdater: TFRUpdater;
 
 implementation
 
 {$R *.fmx}
 
-uses U_BriefMahnVoll, U_BriefAuﬂGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkorb;
+uses U_BriefMahnVoll, U_BriefAuﬂGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkorb,
+  U_RVG;
 
 {$R *.Windows.fmx MSWINDOWS}
 
@@ -75,7 +78,7 @@ begin
   begin
     case Dropdownfall.ItemIndex of
           1:  begin
-                Ware;
+                Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
               end;
           2:  begin
                      FUebersicht.hide;
@@ -99,7 +102,14 @@ begin
   end;
 end;
 
-
+procedure TFUebersicht.add(Fall:string; kosten:real);
+begin
+  FWare.StrGrd.RowCount:=anzahl+1;
+  FWare.StrGrd.Cells[0,anzahl]:=Fall;
+  FWare.StrGrd.Cells[1,anzahl]:=FloatToStr(kosten);
+  inc(Anzahl);
+  Ware;
+end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
 begin
@@ -107,9 +117,12 @@ begin
 end;
 
 procedure TFUebersicht.BtnWarenkorbClick(Sender: TObject);
+var
+  I: Integer;
 begin
   FUebersicht.Hide;
   FWare.Show;
+  //FWare.anzeige;
 end;
 
 procedure TFUebersicht.Ware;
