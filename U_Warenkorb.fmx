@@ -1,0 +1,22 @@
+object FWare: TFWare
+  Left = 0
+  Top = 0
+  Caption = 'Warenkorb'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object BtnBack: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 384.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Weiteres hinzuf'#252'gen'
+    OnClick = BtnBackClick
+  end
+end
