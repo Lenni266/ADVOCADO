@@ -10,30 +10,20 @@ uses System.SysUtils;
 function calcEinfach(streitwert: real): real;
 function calcGKG(streitwert: real): real;
 
-function calcBrief(streitwert: real): real;                    //alles mit Strichen funktioniert
-function calcBriefMahn(streitwert: real): real;                  //
-function calcBriefMahnKlageGer(streitwert: real): real;            //
-function calcBriefMahnKlageGerLose(streitwert: real): real;          //
-function calcBriefMahnKlageVergl(streitwert: real): real;
-function calcBriefMahnKlageBeruf(streitwert: real): real;
+function calcBrief(streitwert: real): real; //stimmt tom
+function calcBriefMahn(streitwert: real): real; //stimmt Tom
+function calcBriefMahnvollbesch(streitwert: real): real; //stimmt Tom
+function calcBriefMahnvollbeschVoll(streitwert: real): real; //Stimmt tom
+function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
+function calcBriefMahnKlageVergleich(streitwert: real): real; //Stimmt Tom
+function calcBriefMahnKlageBerufung(streitwert: real): real;//stimmt tom
+function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
+function calcBriefMahnVollBeschKlageVergleich(streitwert: real): real;
+function calcBriefMahnVollBeschKlageBerufung(streitwert: real): real;
+function calcKlageGerichtVerlieren(streitwert: real): real;
+function calcKlageVergleich(streitwert: real): real;
+function calcKlageBerufung(streitwert: real): real;
 
-function calcBriefMahnKlageVollb(streitwert: real): real;
-function calcBriefMahnKlageVollbKlageGer(streitwert: real): real;
-function calcBriefMahnKlageVollbKlageGerLose(streitwert: real): real;
-function calcBriefMahnKlageVollbKlageVergl(streitwert: real): real;
-function calcBriefMahnKlageVollbKlageBeruf(streitwert: real): real;
-function calcBriefMahnKlageVollbVoll(streitwert: real): real;
-
-function calcBriefAusGerVerg(streitwert: real): real;              //
-function calcBriefAusGerVergVollb(streitwert: real): real;           //
-function calcBriefAusGerVergVollbVoll(streitwert: real): real;         //
-
-function calcKlageGer(streitwert: real): real;
-function calcKlageGerLose(streitwert: real): real;
-function calcKlageVergl(streitwert: real): real;                    //
-function calcKlageBeruf(streitwert: real): real;                      //
-function calcKlageGerVollb(streitwert: real): real;
-function calcKlageGerVollbVoll(streitwert: real): real;
 
 implementation
 
@@ -141,7 +131,9 @@ begin
   result:= ergebnis;
 end;
 
-function calcBrief(streitwert: real): real;
+//Bei allen funktionen muss HINTERHER noch die Steuer draufgerechnet werden!!!
+
+function calcBrief(streitwert: real): real; //Stimmt
 var
   einfach: real;
 begin
@@ -150,121 +142,67 @@ begin
   if 0.2 * einfach < 20 then
     result:= einfach * 1.2
   else
-    result:= (einfach + 20) * 1.19;       //Steuern
+    result:= einfach + 20 ;
 end;
 
 function calcBriefMahn(streitwert: real): real;
 begin
-  result:= 1.0 * calcEinfach(Streitwert) + 0.5 * calcBrief(Streitwert)
+  result:= 1.0 * calcEinfach(Streitwert) + 0.5 * calcBrief(Streitwert);
 end;
 
-function calcBriefMahnKlageGer(streitwert: real): real;
-var
-klagekosten, gerichtskosten: real;
+function calcBriefMahnvollbesch(streitwert: real): real;
 begin
-  //fragen, was genau noch gezahlt werden muss bei Gewinn (alternative ist Lose-Fall)
-  result:=0;
+  result := 0.3 * calceinfach(Streitwert) + 0.5 * CalcBriefMahn(Streitwert);
 end;
 
-function calcBriefMahnKlageGerLose(streitwert: real): real;//nach Unterschied zwischen dem und normal Gericht fragen
-var
-klagekosten, gerichtskosten: real;
+function calcBriefMahnvollbeschVoll(streitwert: real): real;
 begin
-  klagekosten:= 2.5 * calcEinfach(streitwert);
-  gerichtskosten:= 3.0 * calcGKG(streitwert);
-  result:= (calcBriefMahn(streitwert) + (2*klagekosten)) * 1.19 + gerichtskosten;//Wegen genauer Lose-Unterschied fragen
-  end;
-
-function calcBriefMahnKlageVergl(streitwert: real): real;
-begin
-
+  result := 0.6 * calceinfach(Streitwert) + 0.1 * (1/1.19) * calceinfach(Streitwert);
 end;
 
-function calcBriefMahnKlageBeruf(streitwert: real): real;
+function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real;
 begin
-
+  result := 2 * (2.5 * calceinfach(Streitwert) + 0.5 * calcBrief(Streitwert));
 end;
 
-function calcBriefMahnKlageVollb(streitwert: real): real;
+function calcBriefMahnKlageVergleich(streitwert: real): real;
 begin
-
+  result := 3.5 * calceinfach(Streitwert) + 0.5 * calcBrief(Streitwert);
 end;
 
-function calcBriefMahnKlageVollbKlageGer(streitwert: real): real;
+function calcBriefMahnKlageBerufung(streitwert: real): real;
 begin
-
+  result := 5.3 * calceinfach(Streitwert) + 0.5 * calcBrief(Streitwert);
 end;
 
-function calcBriefMahnKlageVollbKlageGerLose(streitwert: real): real;
+function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real;
 begin
-
+  result := 2 * (2.8 * calceinfach(Streitwert) + 0.5 * calcBrief(Streitwert));
 end;
 
-function calcBriefMahnKlageVollbKlageVergl(streitwert: real): real;
+function calcBriefMahnVollBeschKlageVergleich(streitwert: real): real;
 begin
-
+  result := 3.5 * calceinfach(Streitwert) + 0.5 * CalcBrief(streitwert);
 end;
 
-function calcBriefMahnKlageVollbKlageBeruf(streitwert: real): real;
+function calcBriefMahnVollBeschKlageBerufung(streitwert: real): real;
 begin
-
+  result := 5.6 * calceinfach(streitwert) + 0.5 * CalcBrief(streitwert);
 end;
 
-function calcBriefMahnKlageVollbVoll(streitwert: real): real;
+function calcKlageGerichtVerlieren(streitwert: real): real;
 begin
-
+  result := 5.0 * calceinfach(streitwert);
 end;
 
-
-function calcBriefAusGerVerg(streitwert: real): real;
+function calcKlageVergleich(streitwert: real): real;
 begin
-  result:= (calcBrief(streitwert) + 1.5 * calcEinfach(Streitwert)) * 1.19;
+  result := 3.5 * calceinfach(streitwert);
 end;
 
-function calcBriefAusGerVergVollb(streitwert: real): real;
-var
-vollb: real;
+function calcKlageBerufung(streitwert: real): real;
 begin
-  vollb:= 0.3 * calcEinfach(streitwert) * 1.19;
-  result:= calcBriefAusGerVerg(streitwert) + vollb; //beide Grundwerte sind schon versteuert
-end;
-
-function calcBriefAusGerVergVollbVoll(streitwert: real): real;
-var
-  VollKosten: real;   //40% Streitwert oder 40% Einfachgebühr? EZB vor oder nach Steuern?
-begin                 //wirklich ezb-zins + 5%? oder purer zins? sind zinskosten auf richtige Stellen bezogen?
-  VollKosten:= (0.3 * calcEinfach(streitwert) * 1.19 + 0.1 * calcEinfach(streitwert)) * (1 + (FRUpdater.FR / 100));
-  result := calcBriefAusGerVerg(streitwert) + VollKosten; //no steuern, weil die in beidem schon drin sind
-end;
-
-function calcKlageGer(streitwert: real): real;
-begin
-  //wie BriefMahnKlageGer, nur ohne Brief? (je nachdem, wie das zwischen Lose und Win oben geklärt wurde)
-end;
-
-function calcKlageGerLose(streitwert: real): real;
-begin
-  //wie BriefMahnKlageGerLose, nur ohne Brief? (je nachdem, wie das zwischen Lose und Win oben geklärt wurde)
-end;
-
-function calcKlageVergl(streitwert: real): real;
-begin
-  result:= 3.5 * calcEinfach(streitwert) * 1.19;
-end;
-
-function calcKlageBeruf(streitwert: real): real;
-begin
-  result:= 5.3 * calcEinfach(streitwert) * 1.19;
-end;
-
-function calcKlageGerVollb(streitwert: real): real;
-begin
-
-end;
-
-function calcKlageGerVollbVoll(streitwert: real): real;
-begin
-
+  result := 5.3 * calceinfach(streitwert);
 end;
 
 end.
