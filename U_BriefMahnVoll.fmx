@@ -1,6 +1,7 @@
 object FBriefMahnVoll: TFBriefMahnVoll
   Left = 0
   Top = 0
+  BorderStyle = Single
   Caption = 'Brief-Mahnung Vollstreckungsbescheid'
   ClientHeight = 480
   ClientWidth = 640

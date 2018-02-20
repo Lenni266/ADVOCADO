@@ -1,6 +1,7 @@
 object FSettings: TFSettings
   Left = 0
   Top = 0
+  BorderStyle = Single
   Caption = 'Einstellungen'
   ClientHeight = 320
   ClientWidth = 286

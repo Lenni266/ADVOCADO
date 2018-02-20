@@ -44,12 +44,12 @@ end;
 
 procedure TFBriefMahnVoll.BtnPurClick(Sender: TObject);
 begin
-  FUebersicht.add('Voll.-bescheid',U_RVG.calcBriefMahnVollbesch(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FUebersicht.add('Voll.-bescheid',U_RVG.calcBriefMahnvollBesch(StrToInt(FUebersicht.EdtStreitwert.Text)));
 end;
 
 procedure TFBriefMahnVoll.BtnVollClick(Sender: TObject);
 begin
-  FUebersicht.add('Voll.-bescheid-Vollstreckung',U_RVG.calcBriefMahnVollbeschVoll(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FUebersicht.add('Voll.-bescheid-Vollstreckung',U_RVG.calcBriefMahnvollBeschVoll(StrToInt(FUebersicht.EdtStreitwert.Text)));
 end;
 
 procedure TFBriefMahnVoll.BtnGerLoseClick(Sender: TObject);

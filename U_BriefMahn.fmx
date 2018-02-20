@@ -1,6 +1,7 @@
 object FBriefMahn: TFBriefMahn
   Left = 0
   Top = 0
+  BorderStyle = Single
   Caption = 'Brief - Mahnbescheid'
   ClientHeight = 480
   ClientWidth = 640

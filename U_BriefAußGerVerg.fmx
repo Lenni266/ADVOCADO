@@ -1,6 +1,7 @@
 object FBriefAussGer: TFBriefAussGer
   Left = 0
   Top = 0
+  BorderStyle = Single
   Caption = 'Brief Au'#223'ergerichtlicher Vergleich'
   ClientHeight = 480
   ClientWidth = 640

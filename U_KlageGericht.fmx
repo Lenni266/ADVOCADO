@@ -1,6 +1,7 @@
 object FKlage: TFKlage
   Left = 0
   Top = 0
+  BorderStyle = Single
   Caption = 'Klage- und Gerichtsverfahren'
   ClientHeight = 480
   ClientWidth = 640

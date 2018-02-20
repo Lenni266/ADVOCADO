@@ -7,22 +7,28 @@ uses System.SysUtils;
 { Berechnet die Einfachgebuehr nach dem RVG
   @param streitwert Der Streitwert des Falls.
   @returns Die berechnete Einfachgebuehr als @bold(Float). }
-function calcEinfach(streitwert: real): real;
-function calcGKG(streitwert: real): real;
+  function calcEinfach(streitwert: real): real;
+  function calcGKG(streitwert: real): real;
 
   function calcBrief(streitwert: real): real; //stimmt tom
+
   function calcBriefMahn(streitwert: real): real; //stimmt Tom
-  function calcBriefMahnvollbesch(streitwert: real): real; //stimmt Tom
-  function calcBriefMahnvollbeschVoll(streitwert: real): real; //Stimmt tom
   function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
   function calcBriefMahnKlageVergleich(streitwert: real): real; //Stimmt Tom
   function calcBriefMahnKlageBerufung(streitwert: real): real;//stimmt tom
+
+  function calcBriefMahnvollBesch(streitwert: real): real; //stimmt Tom
+  function calcBriefMahnvollBeschVoll(streitwert: real): real; //Stimmt tom
+
   function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
   function calcBriefMahnVollBeschKlageVergleich(streitwert: real): real;
   function calcBriefMahnVollBeschKlageBerufung(streitwert: real): real;
-function calcKlageGerichtVerlieren(streitwert: real): real;
-function calcKlageVergleich(streitwert: real): real;
-function calcKlageBerufung(streitwert: real): real;
+
+  function calcKlageGerichtVerlieren(streitwert: real): real;
+
+  function calcKlageVergleich(streitwert: real): real;
+
+  function calcKlageBerufung(streitwert: real): real;
 
 
 implementation
@@ -150,12 +156,12 @@ begin
   result:= 1.0 * calcEinfach(Streitwert) + 0.5 * calcBrief(Streitwert);
 end;
 
-function calcBriefMahnvollbesch(streitwert: real): real;
+function calcBriefMahnvollBesch(streitwert: real): real;
 begin
   result := 0.3 * calceinfach(Streitwert) + 0.5 * CalcBriefMahn(Streitwert);
 end;
 
-function calcBriefMahnvollbeschVoll(streitwert: real): real;
+function calcBriefMahnvollBeschVoll(streitwert: real): real;
 begin
   result := 0.6 * calceinfach(Streitwert) + 0.1 * (1/1.19) * calceinfach(Streitwert);
 end;

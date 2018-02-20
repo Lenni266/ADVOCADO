@@ -11,7 +11,9 @@ uses
   U_Warenkorb in 'U_Warenkorb.pas' {FWare},
   U_Settings in 'U_Settings.pas' {FSettings},
   U_FRUpdater in 'U_FRUpdater.pas',
-  U_RVG in 'U_RVG.pas';
+  U_RVG in 'U_RVG.pas',
+  U_TWarenkorb in 'U_TWarenkorb.pas',
+  U_Utils in 'U_Utils.pas';
 
 {$R *.res}
 

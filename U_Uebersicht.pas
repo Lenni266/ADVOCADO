@@ -81,19 +81,19 @@ begin
                 Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
               end;
           2:  begin
-                     FUebersicht.hide;
+                  FUebersicht.hide;
                   FBriefMahn.ShowModal;
               end;
           3:  begin
-                     FUebersicht.hide;
+                  FUebersicht.hide;
                   FBriefMahnVoll.ShowModal;
               end;
           4:  begin
-                        FUebersicht.hide;
+                  FUebersicht.hide;
                   FBriefAussGer.ShowModal;
               end;
           5:  begin
-                      FUebersicht.hide;
+                  FUebersicht.hide;
                   FKlage.ShowModal;
               end;
 
@@ -104,11 +104,11 @@ end;
 
 procedure TFUebersicht.add(Fall:string; kosten:real);
 begin
-  FWare.StrGrd.RowCount:=anzahl+1;
-  FWare.StrGrd.Cells[0,anzahl]:=Fall;
-  FWare.StrGrd.Cells[1,anzahl]:=FloatToStr(kosten);
-  inc(Anzahl);
-  Ware;
+//  FWare.StrGrd.RowCount:=anzahl+1;
+//  FWare.StrGrd.Cells[0,anzahl]:=Fall;
+//  FWare.StrGrd.Cells[1,anzahl]:=FloatToStr(kosten);
+//  inc(Anzahl);
+//  Ware;
 end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
