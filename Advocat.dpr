@@ -28,3 +28,4 @@ begin
   Application.CreateForm(TFSettings, FSettings);
   Application.Run;
 end.
+

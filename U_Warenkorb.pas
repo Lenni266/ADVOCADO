@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Layouts, FMX.ListBox, System.Rtti, FMX.Grid,
-  FMX.Objects,
+  FMX.Objects, {FMX.Grid.Style, FMX.ScrollBox}
 
   U_TWarenkorb, U_Utils, FMX.Edit;
 
@@ -21,6 +21,7 @@ type
     Edit1: TEdit;
     ImgClmDel: TImageColumn;
     ImgCtrlDel: TImageControl;
+    LblHead: TLabel;
     procedure BtnBackClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnDebugClick(Sender: TObject);
@@ -30,6 +31,7 @@ type
     procedure GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer;
       var CanSelect: Boolean);
     procedure BtnDelClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -58,6 +60,7 @@ begin
 end;
 
 
+
 procedure TFWare.BtnBackClick(Sender: TObject);
 begin
   FWare.Hide;
@@ -75,6 +78,12 @@ begin
   Warenkorb.Update(GrdWarenkorb);
 end;
 
+
+procedure TFWare.Button1Click(Sender: TObject);
+begin
+  Warenkorb.Update(GrdWarenkorb);
+  ShowMessage(IntToStr(Length(Warenkorb.Content)));
+end;
 
 procedure TFWare.GrdWarenkorbGetValue(Sender: TObject; const Col, Row: Integer;
   var Value: TValue);
@@ -96,18 +105,12 @@ end;
 
 procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
 begin
-  if (GrdWarenkorb.RowCount > 0) and (ARow < GrdWarenkorb.RowCount)then
+  if ACol = 2 then
   begin
-    if ACol = 2 then
-    begin
-      ShowMessage(IntToStr(ARow));
-      DelIntArrElement(Warenkorb.Content, ARow);
-      //GrdWarenkorb.SelectCell(0, 0);     //????????
-      Warenkorb.Update(GrdWarenkorb);
-    end;
+    DelIntArrElement(Warenkorb.Content, ARow);
+    Warenkorb.Update(GrdWarenkorb);
   end;
 end;
-
 
 
 end.

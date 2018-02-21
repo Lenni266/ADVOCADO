@@ -20,7 +20,6 @@ type
     BtnStreit: TButton;
     BtnSetting: TButton;
     imgsettings: TImage;
-    StBkDark: TStyleBook;
     procedure BtnAuswahlClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
@@ -78,7 +77,8 @@ begin
   begin
     case Dropdownfall.ItemIndex of
           1:  begin
-                Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
+                //Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
+                FWare.Warenkorb.Add(0, FWare.GrdWarenkorb);
               end;
           2:  begin
                   FUebersicht.hide;

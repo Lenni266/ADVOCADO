@@ -82,7 +82,9 @@ end;
 
 procedure TWarenkorb.Update(aGrid: TGrid);
 begin
+  aGrid.BeginUpdate;
   aGrid.RowCount := Length(Content);
+  aGrid.EndUpdate;
 end;
 
 function TWarenkorb.getPrice(itemId: integer; streitwert: real):real;
