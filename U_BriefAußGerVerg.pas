@@ -16,6 +16,7 @@ type
     procedure BtnVorhandenClick(Sender: TObject);
     procedure Ware;
     procedure BtnVollClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private-Deklarationen }
   public
@@ -46,6 +47,11 @@ procedure TFBriefAussGer.BtnVorhandenClick(Sender: TObject);
 begin
 Ware;
 end;
+procedure TFBriefAussGer.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.Show;
+end;
+
 procedure TFBriefAussGer.Ware;
 begin
  showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');

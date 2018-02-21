@@ -7,6 +7,7 @@ object FBriefAussGer: TFBriefAussGer
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object BtnBack: TButton
     Position.X = 32.000000000000000000

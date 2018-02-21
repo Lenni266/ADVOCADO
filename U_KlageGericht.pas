@@ -20,6 +20,7 @@ type
     procedure BtnVglClick(Sender: TObject);
     procedure BtnBerufClick(Sender: TObject);
     procedure BtnVollbeschClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private-Deklarationen }
   public
@@ -58,6 +59,11 @@ end;
 procedure TFKlage.BtnVollbeschClick(Sender: TObject);
 begin
 Ware;
+end;
+
+procedure TFKlage.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.Show;
 end;
 
 procedure TFKlage.Ware;

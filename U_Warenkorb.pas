@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Layouts, FMX.ListBox, System.Rtti, FMX.Grid;
+  FMX.Controls.Presentation, FMX.Layouts, FMX.ListBox, System.Rtti, FMX.Grid, FMX.Grid.Style,
+  FMX.ScrollBox;
 
 type
   TFWare = class(TForm)
@@ -17,6 +18,7 @@ type
     procedure BtnBackClick(Sender: TObject);
     procedure BtnDelClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure ende;
   private
     { Private-Deklarationen }
   public
@@ -36,6 +38,11 @@ uses U_Uebersicht;
 
 
 procedure TFWare.BtnBackClick(Sender: TObject);
+begin
+  ende;
+end;
+
+procedure TFWare.ende;
 begin
   FWare.Hide;
   FUebersicht.Show;

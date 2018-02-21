@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects,
+  FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects, FMX.Grid,
 
   U_FRUpdater, U_Settings;
 
@@ -28,6 +28,8 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure add(Fall:string; kosten:real);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+
   private
     { Private-Deklarationen }
   public
@@ -49,6 +51,11 @@ uses U_BriefMahnVoll, U_BriefAußGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkor
   U_RVG;
 
 {$R *.Windows.fmx MSWINDOWS}
+
+procedure TFUebersicht.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.close;
+end;
 
 procedure TFUebersicht.FormCreate(Sender: TObject);
 begin
@@ -81,20 +88,20 @@ begin
                 Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
               end;
           2:  begin
-                     FUebersicht.hide;
-                  FBriefMahn.ShowModal;
+                FUebersicht.hide;
+                FBriefMahn.ShowModal;
               end;
           3:  begin
-                     FUebersicht.hide;
-                  FBriefMahnVoll.ShowModal;
+                FUebersicht.hide;
+                FBriefMahnVoll.ShowModal;
               end;
           4:  begin
-                        FUebersicht.hide;
-                  FBriefAussGer.ShowModal;
+                FUebersicht.hide;
+                FBriefAussGer.ShowModal;
               end;
           5:  begin
-                      FUebersicht.hide;
-                  FKlage.ShowModal;
+                FUebersicht.hide;
+                FKlage.ShowModal;
               end;
 
 
@@ -113,6 +120,7 @@ end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
 begin
+  FUebersicht.Hide;
   FSettings.ShowModal;
 end;
 
@@ -129,5 +137,4 @@ procedure TFUebersicht.Ware;
 begin
   showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');
 end;
-
 end.

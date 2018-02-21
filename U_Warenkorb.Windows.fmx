@@ -1,3 +1,13 @@
 inherited FWare_Windows: TFWare_Windows
   DesignerMasterStyle = 0
+  inherited StrGrd: TStringGrid
+    Viewport.Width = 465.000000000000000000
+    Viewport.Height = 225.000000000000000000
+    inherited StringColumn1: TStringColumn
+      Size.Width = 400.000000000000000000
+    end
+    inherited StringColumn2: TStringColumn
+      Size.Width = 60.000000000000000000
+    end
+  end
 end

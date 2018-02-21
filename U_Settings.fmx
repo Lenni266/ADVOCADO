@@ -8,6 +8,7 @@ object FSettings: TFSettings
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnActivate = FormActivate
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object LblFR: TLabel
     Position.X = 16.000000000000000000
@@ -32,12 +33,12 @@ object FSettings: TFSettings
     StyledSettings = [FontColor]
     Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
-    Size.Width = 146.000000000000000000
+    Size.Width = 141.000000000000000000
     Size.Height = 21.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
     TextSettings.Font.Size = 18.000000000000000000
-    TextSettings.Font.Style = [fsBold]
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
     TextSettings.WordWrap = False
     Text = 'Einstellungen'
   end
