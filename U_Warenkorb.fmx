@@ -43,9 +43,7 @@ object FWare: TFWare
     RowHeight = 21.000000000000000000
     RowCount = 0
     OnGetValue = GrdWarenkorbGetValue
-    OnCellClick = GrdWarenkorbCellClick
-    Viewport.Width = 284.000000000000000000
-    Viewport.Height = 248.000000000000000000
+    OnSelectCell = GrdWarenkorbSelectCell
     object StrClmName: TStringColumn
       Locked = True
       Header = 'Typ'

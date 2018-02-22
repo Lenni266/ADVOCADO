@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Layouts, FMX.ListBox, System.Rtti, FMX.Grid,
-  FMX.Objects, FMX.Grid.Style, FMX.ScrollBox,
+  FMX.Objects, {FMX.Grid.Style, FMX.ScrollBox,}
 
   U_TWarenkorb, U_Utils, FMX.Edit, FMX.Ani;
 
@@ -30,7 +30,8 @@ type
       var Value: TValue);
     procedure BtnDelClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure GrdWarenkorbCellClick(const Column: TColumn; const Row: Integer);
+    //procedure GrdWarenkorbCellClick(const Column: TColumn; const Row: Integer);
+    procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
   private
     { Private-Deklarationen }
   public
@@ -84,14 +85,23 @@ begin
   ShowMessage(IntToStr(Length(Warenkorb.Content)));
 end;
 
-procedure TFWare.GrdWarenkorbCellClick(const Column: TColumn;
-  const Row: Integer);
+//procedure TFWare.GrdWarenkorbCellClick(const Column: TColumn;
+//  const Row: Integer);
+//begin
+//  if Column.Index = 2 then
+//  begin
+//    DelIntArrElement(Warenkorb.Content, Row);
+//    BtnBack.SetFocus;
+//    DelayedSetFocus(GrdWarenkorb);
+//    Warenkorb.Update(GrdWarenkorb);
+//  end;
+//end;
+
+procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
 begin
-  if Column.Index = 2 then
+  if ACol = 2 then
   begin
-    DelIntArrElement(Warenkorb.Content, Row);
-    BtnBack.SetFocus;
-    DelayedSetFocus(GrdWarenkorb);
+    DelIntArrElement(Warenkorb.Content, ARow);
     Warenkorb.Update(GrdWarenkorb);
   end;
 end;
