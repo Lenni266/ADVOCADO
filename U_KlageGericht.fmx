@@ -19,15 +19,15 @@ object FKlage: TFKlage
     Text = 'Weiteres hinzuf'#252'gen'
     OnClick = BtnBackClick
   end
-  object BtnVerl: TButton
+  object BtnGericht: TButton
     Position.X = 88.000000000000000000
     Position.Y = 56.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 9
-    Text = 'Verlieren'
-    OnClick = BtnVerlClick
+    TabOrder = 8
+    Text = 'Klage - Gericht'
+    OnClick = BtnGerichtClick
   end
   object BtnVgl: TButton
     Position.X = 88.000000000000000000
@@ -35,8 +35,8 @@ object FKlage: TFKlage
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 8
-    Text = 'Vergleich'
+    TabOrder = 7
+    Text = 'Klage - Vergleich'
     OnClick = BtnVglClick
   end
   object BtnBeruf: TButton
@@ -45,18 +45,8 @@ object FKlage: TFKlage
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 7
-    Text = 'Berufung'
-    OnClick = BtnBerufClick
-  end
-  object BtnVollbesch: TButton
-    Position.X = 88.000000000000000000
-    Position.Y = 224.000000000000000000
-    Size.Width = 153.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
     TabOrder = 6
-    Text = 'Vollbesch.'
-    OnClick = BtnVollbeschClick
+    Text = 'Klage - Berufung'
+    OnClick = BtnBerufClick
   end
 end

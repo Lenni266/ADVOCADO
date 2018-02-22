@@ -21,24 +21,24 @@ type
 
     const
       Names: array[0..12] of string = (
-            ('Brief'),
+      {0}   ('Brief'),
 
-            ('Brief-Mahn'),
-            ('Brief-Mahn-Klage-Gericht-Verlieren'),
-            ('Brief-Mahn-Klage-Vergleich'),
-            ('Brief-Mahn-Klage-Berufung'),
+      {1}   ('Brief-Mahn'),
+      {2}   ('Brief-Mahn-Klage-Gericht-Verlieren'),
+      {3}   ('Brief-Mahn-Klage-Vergleich'),
+      {4}   ('Brief-Mahn-Klage-Berufung'),
 
-            ('Brief-Mahn-Vollbesch'),
-            ('Brief-Mahn-VollBesch-Voll'),
-            ('Brief-Mahn-VollBesch-Klage-Gericht-Verlieren'),
-            ('Brief-Mahn-VollBesch-Klage-Vergleich'),
-            ('Brief-Mahn-VollBesch-Klage-Berufung'),
+      {5}   ('Brief-Mahn-Vollbesch'),
+      {6}   ('Brief-Mahn-VollBesch-Voll'),
+      {7}   ('Brief-Mahn-VollBesch-Klage-Gericht-Verlieren'),
+      {8}   ('Brief-Mahn-VollBesch-Klage-Vergleich'),
+      {9}   ('Brief-Mahn-VollBesch-Klage-Berufung'),
 
-            ('Klage-Gericht-Verlieren'),
+      {10}   ('Klage-Gericht-Verlieren'),
 
-            ('Klage-Vergleich'),
+      {11}   ('Klage-Vergleich'),
 
-            ('Klage-Berufung')
+      {12}   ('Klage-Berufung')
       );
 end;
 

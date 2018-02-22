@@ -1,4 +1,4 @@
-unit U_Uebersicht;
+﻿unit U_Uebersicht;
 
 interface
 
@@ -26,7 +26,6 @@ type
     procedure Ware;
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure add(Fall:string; kosten:real);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
   private
@@ -97,23 +96,10 @@ begin
               end;
           4:  begin
                 FUebersicht.hide;
-                FBriefAussGer.ShowModal;
-              end;
-          5:  begin
-                FUebersicht.hide;
                 FKlage.ShowModal;
               end;
     end;
   end;
-end;
-
-procedure TFUebersicht.add(Fall:string; kosten:real);
-begin
-//  FWare.StrGrd.RowCount:=anzahl+1;
-//  FWare.StrGrd.Cells[0,anzahl]:=Fall;
-//  FWare.StrGrd.Cells[1,anzahl]:=FloatToStr(kosten);
-//  inc(Anzahl);
-//  Ware;
 end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
@@ -135,4 +121,5 @@ procedure TFUebersicht.Ware;
 begin
   showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');
 end;
+
 end.

@@ -33,7 +33,13 @@ implementation
 
 {$R *.fmx}
 
-uses U_Uebersicht, U_RVG;
+uses U_Uebersicht, U_RVG, U_Warenkorb;
+
+procedure TFBriefMahn.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.Show;
+end;
+
 
 procedure TFBriefMahn.BtnBackClick(Sender: TObject);
 begin
@@ -43,28 +49,22 @@ end;
 
 procedure TFBriefMahn.BtnPurClick(Sender: TObject);
 begin
-  FUebersicht.add('Brief-Mahnbescheid',U_RVG.calcBriefMahn(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FWare.Warenkorb.Add(1, FWare.GrdWarenkorb);
 end;
 
 procedure TFBriefMahn.BtnGerVerClick(Sender: TObject);
 begin
-  FUebersicht.add('Brief-Mahnbescheid-Gericht',U_RVG.calcBriefMahnKlageGerichtVerlieren(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FWare.Warenkorb.Add(2, FWare.GrdWarenkorb);
 end;
 
 procedure TFBriefMahn.BtnVglClick(Sender: TObject);
 begin
-  FUebersicht.add('Brief-Mahnbescheid-Klage-Vergleich',U_RVG.calcBriefMahnKlageVergleich(StrToInt(FUebersicht.EdtStreitwert.Text)));
-end;
-
-procedure TFBriefMahn.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
- FUebersicht.Show;
+  FWare.Warenkorb.Add(3, FWare.GrdWarenkorb);
 end;
 
 procedure TFBriefMahn.BtnBerufungClick(Sender: TObject);
 begin
-  FUebersicht.add('Brief-Mahnbescheid-Klage-Berufung',U_RVG.calcBriefMahnKlageBerufung(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FWare.Warenkorb.Add(4, FWare.GrdWarenkorb);
 end;
-
 
 end.

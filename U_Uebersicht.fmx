@@ -52,8 +52,7 @@ object FUebersicht: TFUebersicht
       'Brief'
       'Brief - Mahnbescheid'
       'Brief - Mahnung Vollstreckungsbescheid'
-      'Brief - Au'#223'ergerichtlicher Vergleich'
-      'Klage- und Gerichtsverfahren')
+      'Direkte Klage')
     ItemIndex = 0
     Position.X = 16.000000000000000000
     Position.Y = 136.000000000000000000
@@ -199,7 +198,6 @@ object FUebersicht: TFUebersicht
   end
   object StBkDark: TStyleBook
     StyleName = 'Dark.style'
-    UseStyleManager = True
     Styles = <
       item
         ResourcesBin = {

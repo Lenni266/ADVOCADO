@@ -35,7 +35,7 @@ implementation
 
 {$R *.fmx}
 
-uses U_Uebersicht, U_RVG;
+uses U_Uebersicht, U_RVG, U_Warenkorb;
 
 procedure TFBriefMahnVoll.BtnBackClick(Sender: TObject);
 begin
@@ -45,28 +45,30 @@ end;
 
 procedure TFBriefMahnVoll.BtnPurClick(Sender: TObject);
 begin
-  FUebersicht.add('Voll.-bescheid',U_RVG.calcBriefMahnvollBesch(StrToInt(FUebersicht.EdtStreitwert.Text)));
+ FWare.Warenkorb.Add(5, FWare.GrdWarenkorb);
 end;
 
 procedure TFBriefMahnVoll.BtnVollClick(Sender: TObject);
 begin
-  FUebersicht.add('Voll.-bescheid-Vollstreckung',U_RVG.calcBriefMahnvollBeschVoll(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FWare.Warenkorb.Add(6, FWare.GrdWarenkorb);
 end;
 
 procedure TFBriefMahnVoll.BtnGerLoseClick(Sender: TObject);
 begin
-  FUebersicht.add('Voll.-bescheid-Gericht',U_RVG.calcBriefMahnVollbeschKlageGerichtVerlieren(StrToInt(FUebersicht.EdtStreitwert.Text)));
-end;
-
-procedure TFBriefMahnVoll.BtnKlageBerufClick(Sender: TObject);
-begin
-  FUebersicht.add('Voll.-bescheid-Klage-Berufung',U_RVG.calcBriefMahnVollbeschKlageBerufung(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FWare.Warenkorb.Add(7, FWare.GrdWarenkorb);
 end;
 
 procedure TFBriefMahnVoll.BtnKlageVerglClick(Sender: TObject);
 begin
-  FUebersicht.add('Brief-Mahnbescheid-Klage-Vergleich',U_RVG.calcBriefMahnVollbeschKlageVergleich(StrToInt(FUebersicht.EdtStreitwert.Text)));
+  FWare.Warenkorb.Add(8, FWare.GrdWarenkorb);
 end;
+
+procedure TFBriefMahnVoll.BtnKlageBerufClick(Sender: TObject);
+begin
+  FWare.Warenkorb.Add(9, FWare.GrdWarenkorb);
+end;
+
+
 
 
 procedure TFBriefMahnVoll.FormClose(Sender: TObject; var Action: TCloseAction);

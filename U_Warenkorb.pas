@@ -1,4 +1,4 @@
-unit U_Warenkorb;
+﻿unit U_Warenkorb;
 
 interface
 
@@ -6,9 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Layouts, FMX.ListBox, System.Rtti, FMX.Grid,
-  FMX.Objects, {FMX.Grid.Style, FMX.ScrollBox}
+  FMX.Objects, FMX.Grid.Style, FMX.ScrollBox,
 
-  U_TWarenkorb, U_Utils, FMX.Edit;
+  U_TWarenkorb, U_Utils, FMX.Edit, FMX.Ani;
 
 type
   TFWare = class(TForm)
@@ -20,18 +20,17 @@ type
     BtnDebug: TButton;
     Edit1: TEdit;
     ImgClmDel: TImageColumn;
-    ImgCtrlDel: TImageControl;
     LblHead: TLabel;
+    ImgCtrlDel: TImageControl;
     procedure BtnBackClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnDebugClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GrdWarenkorbGetValue(Sender: TObject; const Col, Row: Integer;
       var Value: TValue);
-    procedure GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer;
-      var CanSelect: Boolean);
     procedure BtnDelClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure GrdWarenkorbCellClick(const Column: TColumn; const Row: Integer);
   private
     { Private-Deklarationen }
   public
@@ -85,6 +84,18 @@ begin
   ShowMessage(IntToStr(Length(Warenkorb.Content)));
 end;
 
+procedure TFWare.GrdWarenkorbCellClick(const Column: TColumn;
+  const Row: Integer);
+begin
+  if Column.Index = 2 then
+  begin
+    DelIntArrElement(Warenkorb.Content, Row);
+    BtnBack.SetFocus;
+    DelayedSetFocus(GrdWarenkorb);
+    Warenkorb.Update(GrdWarenkorb);
+  end;
+end;
+
 procedure TFWare.GrdWarenkorbGetValue(Sender: TObject; const Col, Row: Integer;
   var Value: TValue);
 var
@@ -97,19 +108,13 @@ begin
     Value := TValue.From<String>(Warenkorb.Names[id])
   else if Col = 1 then
     //gets price of the item
-    Value := TValue.From<String>(FloatToStr(Warenkorb.getPrice(id, StrToFloat(FUebersicht.EdtStreitwert.Text))) + '�')
+    Value := TValue.From<String>(FloatToStr(Warenkorb.getPrice(id, StrToFloat(FUebersicht.EdtStreitwert.Text))) + '€')
   else if Col = 2 then
     Value := TValue.From<TBitmap>(ImgCtrlDel.Bitmap);
 end;
 
-procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
-begin
-  if ACol = 2 then
-  begin
-    DelIntArrElement(Warenkorb.Content, ARow);
-    Warenkorb.Update(GrdWarenkorb);
-  end;
-end;
+
+
 
 
 end.

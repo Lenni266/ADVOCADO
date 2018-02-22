@@ -4,7 +4,6 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   U_Uebersicht in 'U_Uebersicht.pas' {FUebersicht},
-  U_BriefAuﬂGerVerg in 'U_BriefAuﬂGerVerg.pas' {FBriefAussGer},
   U_BriefMahnVoll in 'U_BriefMahnVoll.pas' {FBriefMahnVoll},
   U_KlageGericht in 'U_KlageGericht.pas' {FKlage},
   U_BriefMahn in 'U_BriefMahn.pas' {FBriefMahn},
@@ -20,7 +19,6 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TFUebersicht, FUebersicht);
-  Application.CreateForm(TFBriefAussGer, FBriefAussGer);
   Application.CreateForm(TFBriefMahnVoll, FBriefMahnVoll);
   Application.CreateForm(TFKlage, FKlage);
   Application.CreateForm(TFBriefMahn, FBriefMahn);
