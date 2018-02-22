@@ -39,7 +39,6 @@ object FSettings: TFSettings
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
     TextSettings.Font.Size = 18.000000000000000000
-    TextSettings.Font.StyleExt = {00070000000000000004000000}
     TextSettings.WordWrap = False
     Text = 'Einstellungen'
   end
