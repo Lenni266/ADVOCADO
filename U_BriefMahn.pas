@@ -19,6 +19,7 @@ type
     procedure BtnGerVerClick(Sender: TObject);
     procedure BtnVglClick(Sender: TObject);
     procedure BtnBerufungClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private-Deklarationen }
   public
@@ -53,6 +54,11 @@ end;
 procedure TFBriefMahn.BtnVglClick(Sender: TObject);
 begin
   FUebersicht.add('Brief-Mahnbescheid-Klage-Vergleich',U_RVG.calcBriefMahnKlageVergleich(StrToInt(FUebersicht.EdtStreitwert.Text)));
+end;
+
+procedure TFBriefMahn.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.Show;
 end;
 
 procedure TFBriefMahn.BtnBerufungClick(Sender: TObject);

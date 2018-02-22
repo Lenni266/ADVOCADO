@@ -97,13 +97,12 @@ begin
     Value := TValue.From<String>(Warenkorb.Names[id])
   else if Col = 1 then
     //gets price of the item
-    Value := TValue.From<String>(FloatToStr(Warenkorb.getPrice(id, StrToFloat(FUebersicht.EdtStreitwert.Text))) + '€')
+    Value := TValue.From<String>(FloatToStr(Warenkorb.getPrice(id, StrToFloat(FUebersicht.EdtStreitwert.Text))) + 'ï¿½')
   else if Col = 2 then
     Value := TValue.From<TBitmap>(ImgCtrlDel.Bitmap);
 end;
 
-
-procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
+procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
 begin
   if ACol = 2 then
   begin

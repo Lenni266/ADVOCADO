@@ -21,6 +21,7 @@ type
     procedure BtnGerLoseClick(Sender: TObject);
     procedure BtnKlageBerufClick(Sender: TObject);
     procedure BtnKlageVerglClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private-Deklarationen }
   public
@@ -67,5 +68,10 @@ begin
   FUebersicht.add('Brief-Mahnbescheid-Klage-Vergleich',U_RVG.calcBriefMahnVollbeschKlageVergleich(StrToInt(FUebersicht.EdtStreitwert.Text)));
 end;
 
+
+procedure TFBriefMahnVoll.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FUebersicht.Show;
+end;
 
 end.

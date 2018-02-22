@@ -18,6 +18,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure NmBxFRExit(Sender: TObject);
     procedure BtnUpdateFRClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private-Deklarationen }
   public
@@ -60,6 +61,11 @@ begin
 end;
 
 
+
+procedure TFSettings.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.Show;
+end;
 
 procedure TFSettings.NmBxFRExit(Sender: TObject);
 begin
