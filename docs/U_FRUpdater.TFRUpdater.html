@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>AdvoCat: U_FRUpdater: Klasse TFRUpdater</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-15">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>AdvoCat</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Klassenhierarchie</a></p><p><a href="AllClasses.html" class="navigation">Klassen, Interfaces und Objects</a></p><p><a href="AllTypes.html" class="navigation">Datentypen</a></p><p><a href="AllVariables.html" class="navigation">Variablen</a></p><p><a href="AllConstants.html" class="navigation">Konstanten</a></p><p><a href="AllFunctions.html" class="navigation">Funktionen und Prozeduren</a></p><p><a href="AllIdentifiers.html" class="navigation">Bezeichner</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+<a name="TFRUpdater"></a><h1 class="cio">Klasse TFRUpdater</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Beschreibung</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchie</a></td><td><a class="section" href="#PasDoc-Fields">Felder</a></td><td><a class="section" href="#PasDoc-Methods">Methoden</a></td><td>Eigenschaften</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="U_FRUpdater.html">U_FRUpdater</a></p>
+<h2 class="declaration">Deklaration</h2>
+<p class="declaration">
+<code>type TFRUpdater = class(TObject)</code></p>
+<h2 class="description">Beschreibung</h2>
+<p>
+Ruft den aktuellen Leitzins ab und liest ihn aus einer lokaler Datei.</p>
+<p>
+ Diese Klasse ermöglicht das Abrufen des aktuellen EZB-Leitzinses aus dem Internet über die API des <i>Statistical Data Warehouse</i> der EZB. Außerdem enthält sie einige Funktionen, die bei der Abfrage helfen.</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchie</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="thisitem">TFRUpdater</li></ul><h2 class="overview">Übersicht</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Felder</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="U_FRUpdater.TFRUpdater.html#FURL">FURL</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="U_FRUpdater.TFRUpdater.html#FFileName">FFileName</a></b>: string;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methoden</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="U_FRUpdater.TFRUpdater.html#GetPage">GetPage</a></b>(aURL: string): string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="U_FRUpdater.TFRUpdater.html#updateFR">updateFR</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="U_FRUpdater.TFRUpdater.html#readFR">readFR</a></b>: real;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="U_FRUpdater.TFRUpdater.html#HasInternet">HasInternet</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="U_FRUpdater.TFRUpdater.html#FileExist">FileExist</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="U_FRUpdater.TFRUpdater.html#Create">Create</a></b>(URL, FileName: string);</code></td>
+</tr>
+</table>
+<h2 class="description">Beschreibung</h2>
+<h3 class="detail">Felder</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="FURL"></a><code><b>FURL</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+In der Klasse abgespeicherte URL.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="FFileName"></a><code><b>FFileName</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Absoluter Pfad zur Datei, welche den Leitzins enthält.</p>
+<p>
+ Absoluter Absoluter Pfad zur Datei, welche den Leitzins enthält. Wird generiert durch den in <a class="normal" href="U_FRUpdater.TFRUpdater.html#Create">Create</a> angegebenen Dateinamen und das aktuelle Verzeichnis.</p>
+</td></tr>
+</table>
+<h3 class="detail">Methoden</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetPage"></a><code>function <b>GetPage</b>(aURL: string): string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Gibt eine Internetseite als String aus.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>aURL</dt>
+<dd>Die URL der Seite als <b>String</b>.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Der Inhalt der Seite als <b>String</b>.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="updateFR"></a><code>procedure <b>updateFR</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Ruft den den aktuellen EZB-Leitzins aus dem Internet über die API des <i>Statistical Data Warehouse</i> der EZB ab. Dieser wird in die durch <a class="normal" href="U_FRUpdater.TFRUpdater.html#FFileName">FFileName</a> spezifizierte Datei als Float (z.B. <code>0,000</code>) abgespeichert.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="readFR"></a><code>function <b>readFR</b>: real;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Liest den EZB-Leitzins aus der in <a class="normal" href="U_FRUpdater.TFRUpdater.html#Create">Create</a> angegebenen Datei aus. Die Datei muss sich im aktuellen Verzeichnis befinden. </p>
+<h6 class="description_section">Result</h6>
+<p class="return">Der Leitzins als <b>Float</b>.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="HasInternet"></a><code>function <b>HasInternet</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Überprüft ob Verbindung zu <a class="normal" href="U_FRUpdater.TFRUpdater.html#FURL">FURL</a> besteht. </p>
+<h6 class="description_section">Result</h6>
+<p class="return">Falls Verbindung besteht: <code>True</code>, ansonsten <code>False</code>.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FileExist"></a><code>function <b>FileExist</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Überprüft ob die Datei an <a class="normal" href="U_FRUpdater.TFRUpdater.html#FFileName">FFileName</a> existiert. </p>
+<h6 class="description_section">Result</h6>
+<p class="return">Falls sie existiert: <code>True</code>, ansonsten <code>False</code>.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Create"></a><code>constructor <b>Create</b>(URL, FileName: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Constructor der Klasse.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>URL</dt>
+<dd>URL der Anfrage an die API als <b>String</b>.</dd>
+<dt>FileName</dt>
+<dd>Name der zu erstellenden bzw. schon existierenden Datei als <b>String</b>. Lediglich der Name, kein absoluter/relativer Pfad.</dd>
+</dl>
+</td></tr>
+</table>
+<hr noshade size="1"><span class="appinfo"><em>Erstellt mit <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

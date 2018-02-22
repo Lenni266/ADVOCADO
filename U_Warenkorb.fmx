@@ -1,0 +1,52 @@
+object FWare: TFWare
+  Left = 0
+  Top = 0
+  Caption = 'Warenkorb'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object BtnBack: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 360.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Weiteres hinzuf'#252'gen'
+    OnClick = BtnBackClick
+  end
+  object StrGrd: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 72.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 465.000000000000000000
+    Size.Height = 225.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    RowHeight = 21.000000000000000000
+    RowCount = 1
+    Viewport.Width = 465.000000000000000000
+    Viewport.Height = 225.000000000000000000
+    object StringColumn1: TStringColumn
+      Size.Width = 400.000000000000000000
+    end
+    object StringColumn2: TStringColumn
+      Size.Width = 60.000000000000000000
+    end
+  end
+  object BtnDel: TButton
+    Position.X = 368.000000000000000000
+    Position.Y = 360.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Liste leeren'
+    OnClick = BtnDelClick
+  end
+end

@@ -1,0 +1,72 @@
+object FBriefMahnVoll: TFBriefMahnVoll
+  Left = 0
+  Top = 0
+  Caption = 'Brief-Mahnung Vollstreckungsbescheid'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object BtnBack: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 384.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Weiteres hinzuf'#252'gen'
+    OnClick = BtnBackClick
+  end
+  object BtnPur: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Vollstreckungsbescheid'
+    OnClick = BtnPurClick
+  end
+  object BtnVoll: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = '+ Vollstreckung'
+    OnClick = BtnVollClick
+  end
+  object BtnGerLose: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = '+ Gericht-Verlieren'
+    OnClick = BtnGerLoseClick
+  end
+  object BtnKlageBeruf: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = '+ Klage-Berufung'
+    OnClick = BtnKlageBerufClick
+  end
+  object BtnKlageVergl: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = '+ Klage-Vergleich'
+    OnClick = BtnKlageVerglClick
+  end
+end

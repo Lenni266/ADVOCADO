@@ -1,0 +1,62 @@
+object FKlage: TFKlage
+  Left = 0
+  Top = 0
+  Caption = 'Klage- und Gerichtsverfahren'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object BtnBack: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 384.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Weiteres hinzuf'#252'gen'
+    OnClick = BtnBackClick
+  end
+  object BtnVerl: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'Verlieren'
+    OnClick = BtnVerlClick
+  end
+  object BtnVgl: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Vergleich'
+    OnClick = BtnVglClick
+  end
+  object BtnBeruf: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Berufung'
+    OnClick = BtnBerufClick
+  end
+  object BtnVollbesch: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Vollbesch.'
+    OnClick = BtnVollbeschClick
+  end
+end

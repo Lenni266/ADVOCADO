@@ -1,0 +1,68 @@
+object FSettings: TFSettings
+  Left = 0
+  Top = 0
+  Caption = 'Einstellungen'
+  ClientHeight = 320
+  ClientWidth = 286
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnActivate = FormActivate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object LblFR: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 59.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'EZB-Leitzins:'
+  end
+  object BtnBack: TButton
+    Position.X = 144.000000000000000000
+    Position.Y = 288.000000000000000000
+    Size.Width = 136.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Zur'#252'ck zur '#220'bersicht'
+    OnClick = BtnBackClick
+  end
+  object LblSettings: TLabel
+    AutoSize = True
+    StyledSettings = [FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 141.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.Font.Size = 18.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.WordWrap = False
+    Text = 'Einstellungen'
+  end
+  object NmBxFR: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Cursor = crIBeam
+    ValueType = Float
+    Position.X = 96.000000000000000000
+    Position.Y = 56.000000000000000000
+    VertIncrement = 0.500000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    OnExit = NmBxFRExit
+  end
+  object BtnUpdateFR: TButton
+    Position.X = 160.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Leitzins abrufen'
+    OnClick = BtnUpdateFRClick
+  end
+end
