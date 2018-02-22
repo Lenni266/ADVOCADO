@@ -20,7 +20,6 @@ type
     BtnStreit: TButton;
     BtnSetting: TButton;
     imgsettings: TImage;
-    StBkDark: TStyleBook;
     procedure BtnAuswahlClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
@@ -47,7 +46,7 @@ implementation
 
 {$R *.fmx}
 
-uses U_BriefMahnVoll, U_BriefAußGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkorb,
+uses U_BriefMahnVoll, U_BriefAuÃŸGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkorb,
   U_RVG;
 
 {$R *.Windows.fmx MSWINDOWS}
@@ -85,7 +84,8 @@ begin
   begin
     case Dropdownfall.ItemIndex of
           1:  begin
-                Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
+                //Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
+                FWare.Warenkorb.Add(0, FWare.GrdWarenkorb);
               end;
           2:  begin
                 FUebersicht.hide;
@@ -103,19 +103,17 @@ begin
                 FUebersicht.hide;
                 FKlage.ShowModal;
               end;
-
-
     end;
   end;
 end;
 
 procedure TFUebersicht.add(Fall:string; kosten:real);
 begin
-  FWare.StrGrd.RowCount:=anzahl+1;
-  FWare.StrGrd.Cells[0,anzahl]:=Fall;
-  FWare.StrGrd.Cells[1,anzahl]:=FloatToStr(kosten);
-  inc(Anzahl);
-  Ware;
+//  FWare.StrGrd.RowCount:=anzahl+1;
+//  FWare.StrGrd.Cells[0,anzahl]:=Fall;
+//  FWare.StrGrd.Cells[1,anzahl]:=FloatToStr(kosten);
+//  inc(Anzahl);
+//  Ware;
 end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
@@ -135,6 +133,6 @@ end;
 
 procedure TFUebersicht.Ware;
 begin
-  showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');
+  showmessage ('Dem Warenkorb erfolgreich hinzugefÃ¼gt!');
 end;
 end.

@@ -1,6 +1,7 @@
 object FUebersicht: TFUebersicht
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = Single
   Caption = #220'bersicht'
   ClientHeight = 313
@@ -22,7 +23,6 @@ object FUebersicht: TFUebersicht
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
     TextSettings.Font.Size = 22.000000000000000000
-    TextSettings.Font.StyleExt = {00070000000000000004000000}
     TextSettings.WordWrap = False
     Text = 'ADVOCADO'
   end
@@ -37,6 +37,7 @@ object FUebersicht: TFUebersicht
   object EdtStreitwert: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 2
+    Text = '1500'
     Position.X = 16.000000000000000000
     Position.Y = 96.000000000000000000
     Size.Width = 201.000000000000000000
