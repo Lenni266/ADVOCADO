@@ -18,7 +18,7 @@ object FUebersicht: TFUebersicht
     StyledSettings = [FontColor]
     Position.X = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 106.000000000000000000
+    Size.Width = 112.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
@@ -195,5 +195,27 @@ object FUebersicht: TFUebersicht
     Size.Height = 33.000000000000000000
     Size.PlatformDefault = False
     OnClick = BtnSettingClick
+  end
+  object LblAdded1: TLabel
+    Opacity = 0.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein1: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus1: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
   end
 end

@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation;
+  FMX.Controls.Presentation, FMX.Ani;
 
 type
   TFBriefMahn = class(TForm)
@@ -14,6 +14,18 @@ type
     BtnGerVer: TButton;
     BtnVgl: TButton;
     BtnBerufung: TButton;
+    LblAdded1: TLabel;
+    LblAdded2: TLabel;
+    LblAdded3: TLabel;
+    LblAdded4: TLabel;
+    Ein1: TFloatAnimation;
+    Aus1: TFloatAnimation;
+    Ein2: TFloatAnimation;
+    Aus2: TFloatAnimation;
+    Ein3: TFloatAnimation;
+    Aus3: TFloatAnimation;
+    Ein4: TFloatAnimation;
+    Aus4: TFloatAnimation;
     procedure BtnBackClick(Sender: TObject);
     procedure BtnPurClick(Sender: TObject);
     procedure BtnGerVerClick(Sender: TObject);
@@ -50,21 +62,29 @@ end;
 procedure TFBriefMahn.BtnPurClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(1, FWare.GrdWarenkorb);
+  Ein1.Start;
+  Aus1.Start;
 end;
 
 procedure TFBriefMahn.BtnGerVerClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(2, FWare.GrdWarenkorb);
+  Ein2.Start;
+  Aus2.Start;
 end;
 
 procedure TFBriefMahn.BtnVglClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(3, FWare.GrdWarenkorb);
+  Ein4.Start;
+  Aus4.Start;
 end;
 
 procedure TFBriefMahn.BtnBerufungClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(4, FWare.GrdWarenkorb);
+  Ein3.Start;
+  Aus3.Start;
 end;
 
 end.

@@ -60,4 +60,92 @@ object FBriefMahn: TFBriefMahn
     Text = '+ Berufung'
     OnClick = BtnBerufungClick
   end
+  object LblAdded1: TLabel
+    Opacity = 0.000000000000000000
+    Position.X = 264.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein1: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus1: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded2: TLabel
+    Opacity = 0.000000000000000000
+    Position.X = 264.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein2: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus2: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded3: TLabel
+    Opacity = 0.000000000000000000
+    Position.X = 264.000000000000000000
+    Position.Y = 240.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein3: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus3: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded4: TLabel
+    Opacity = 0.000000000000000000
+    Position.X = 264.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein4: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus4: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
 end

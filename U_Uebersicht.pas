@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects, FMX.Grid,
 
-  U_FRUpdater, U_Settings;
+  U_FRUpdater, U_Settings, FMX.Ani;
 
 type
   TFUebersicht = class(TForm)
@@ -20,6 +20,9 @@ type
     BtnStreit: TButton;
     BtnSetting: TButton;
     imgsettings: TImage;
+    LblAdded1: TLabel;
+    Ein1: TFloatAnimation;
+    Aus1: TFloatAnimation;
     procedure BtnAuswahlClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
@@ -85,6 +88,8 @@ begin
           1:  begin
                 //Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
                 FWare.Warenkorb.Add(0, FWare.GrdWarenkorb);
+                Ein1.Start;
+                Aus1.Start;
               end;
           2:  begin
                 FUebersicht.hide;
