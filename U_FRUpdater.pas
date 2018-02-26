@@ -4,7 +4,7 @@ unit U_FRUpdater;
 
 interface
 
-uses System.Classes, System.SysUtils, IdHTTP;
+uses System.Classes, System.SysUtils, IdHTTP, U_Utils;
 
 type
   { @abstract(Ruft den aktuellen Leitzins ab und liest ihn aus einer lokaler Datei.)
@@ -33,6 +33,7 @@ type
 
       var FR: real;
 
+      procedure writeFRToFile(FR: real);
       { Überprüft ob Verbindung zu @link(FURL) besteht.
         @returns Falls Verbindung besteht: @true, ansonsten @false. }
       function HasInternet: boolean;
@@ -63,14 +64,11 @@ end;
 // Leitzins herunterladen und in Datei in aktuellen Verzeichnis, in dem das Programm ausgefuehrt wird, schreiben
 procedure TFRUpdater.updateFR;
 var
-  f: TextFile;
   FR, entry: string;
   data: TStringList;
   delimiterPos: integer;
+const myNum = ['0','1','2','3','4','5','6','7','8','9','0'];
 begin
-  AssignFile(f, FFileName);
-  Rewrite(f);
-
   data:= TStringList.Create;
   data.Text:= GetPage(FURL);
 
@@ -78,8 +76,10 @@ begin
   delimiterPos:= Pos(',', entry, 1);
   FR:= StringReplace(Copy(entry, delimiterPos + 1, Length(entry) - delimiterPos), '.', ',', [rfReplaceAll]);
 
-  write(f, FR);
-  CloseFile(f);
+  if IsStrFloatNum(FR) then
+  begin
+    writeFRToFile(StrToFloat(FR));
+  end;
 end;
 
 // Leitzins aus Datei im aktuellen Verzeichnis lesen
@@ -95,6 +95,17 @@ begin
   FR:=output;
   result:=output;
 end;
+
+procedure TFRUpdater.writeFRToFile(FR: real);
+var
+  f: TextFile;
+begin
+  AssignFile(f, FFileName);
+  Rewrite(f);
+  write(f, FloatToStr(FR));
+  CloseFile(f);
+end;
+
 
 // ueberpruefen, ob Verbindung zur API besteht
 function TFRUpdater.HasInternet: boolean;

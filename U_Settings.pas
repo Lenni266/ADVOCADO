@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox;
+  FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox, FMX.Ani;
 
 type
   TFSettings = class(TForm)
@@ -14,6 +14,10 @@ type
     LblSettings: TLabel;
     NmBxFR: TNumberBox;
     BtnUpdateFR: TButton;
+    ChkBxDark: TCheckBox;
+    Label1: TLabel;
+    Ein1: TFloatAnimation;
+    Aus1: TFloatAnimation;
     procedure BtnBackClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure NmBxFRExit(Sender: TObject);
@@ -36,9 +40,16 @@ uses U_Uebersicht;
 
 procedure TFSettings.BtnBackClick(Sender: TObject); //Problem: bei mir schmiert dann alles ab
 begin
-  FSettings.Hide;
+  FSettings.Close;
   FUebersicht.Show;
 end;
+
+procedure TFSettings.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FSettings.Close;
+  FUebersicht.Show;
+end;
+
 
 // Update
 procedure TFSettings.BtnUpdateFRClick(Sender: TObject);
@@ -49,27 +60,30 @@ begin
   if FRUpdater.FileExist then
     NmBxFR.Value:= FRUpdater.readFR
   else
-    // ERROR MESSAGE
+  begin
+    Ein1.Start;
+    Aus1.Start;
+  end;
 end;
 
-procedure TFSettings.FormActivate(Sender: TObject);
+
+procedure TFSettings.FormActivate(Sender: TObject);
 begin
   if FRUpdater.FileExist then
-    NmBxFR.Value:= FRUpdater.readFR
-  else
-    //ERROR MESSAGE
+    NmBxFR.Value:= FRUpdater.readFR;
 end;
 
-
-
-procedure TFSettings.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
- FUebersicht.Show;
-end;
 
 procedure TFSettings.NmBxFRExit(Sender: TObject);
+var
+  newFR: real;
 begin
-  // UPDATE FR MANUALLY
+  newFR := NmBxFR.Value;
+  if FRUpdater.FR <> newFR then
+  begin
+    FRUpdater.FR := newFR;
+    FRUpdater.writeFRToFile(newFR);
+  end;
 end;
 
 end.

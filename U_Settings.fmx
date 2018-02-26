@@ -12,8 +12,8 @@ object FSettings: TFSettings
   OnClose = FormClose
   DesignerMasterStyle = 0
   object LblFR: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 59.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 43.000000000000000000
     Size.Width = 73.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
@@ -34,7 +34,7 @@ object FSettings: TFSettings
     StyledSettings = [FontColor]
     Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
-    Size.Width = 141.000000000000000000
+    Size.Width = 146.000000000000000000
     Size.Height = 21.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
@@ -46,23 +46,62 @@ object FSettings: TFSettings
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 4
     Cursor = crIBeam
+    DecimalDigits = 3
     ValueType = Float
-    Position.X = 96.000000000000000000
-    Position.Y = 56.000000000000000000
-    VertIncrement = 0.500000000000000000
-    Size.Width = 41.000000000000000000
+    KeyboardType = NumbersAndPunctuation
+    Position.X = 15.000000000000000000
+    Position.Y = 67.000000000000000000
+    HorzIncrement = 0.000000000000000000
+    VertIncrement = 0.000000000000000000
+    Size.Width = 66.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
+    KillFocusByReturn = True
     OnExit = NmBxFRExit
   end
   object BtnUpdateFR: TButton
-    Position.X = 160.000000000000000000
-    Position.Y = 56.000000000000000000
+    Position.X = 103.000000000000000000
+    Position.Y = 67.000000000000000000
     Size.Width = 97.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 6
     Text = 'Leitzins abrufen'
     OnClick = BtnUpdateFRClick
+  end
+  object ChkBxDark: TCheckBox
+    Position.X = 15.000000000000000000
+    Position.Y = 122.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'dunkles Theme aktivieren'
+  end
+  object Label1: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Size, Style]
+    Opacity = 0.000000000000000000
+    Position.X = 15.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 201.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claRed
+    TextSettings.WordWrap = False
+    Text = 'Leitzins konnte nicht geladen werden'
+    object Ein1: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus1: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
   end
 end

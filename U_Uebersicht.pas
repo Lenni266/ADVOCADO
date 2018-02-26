@@ -6,8 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects, FMX.Grid,
+  FMX.Ani,
 
-  U_FRUpdater, U_Settings, FMX.Ani;
+  U_FRUpdater, U_Settings;
 
 type
   TFUebersicht = class(TForm)
@@ -30,6 +31,8 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
+      var KeyChar: Char; Shift: TShiftState);
 
   private
     { Private-Deklarationen }
@@ -81,13 +84,20 @@ end;
 procedure TFUebersicht.BtnAuswahlClick(Sender: TObject);
 begin
   if EdtStreitwert.Text = '' then
-    raise exception.Create ('Bitte Streitwert eingeben')
+  begin
+    //raise Exception.Create('Bitte Streitwert eingeben')
+    LblAdded1.Text := 'Bitte zuerst Streitwert eingeben!';
+    LblAdded1.FontColor := TAlphaColorRec.Red;
+    Ein1.Start;
+    Aus1.Start;
+  end
   else
   begin
     case Dropdownfall.ItemIndex of
           1:  begin
-                //Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
                 FWare.Warenkorb.Add(0, FWare.GrdWarenkorb);
+                LblAdded1.Text := 'Dem Warenkorb hinzugefügt!';
+                LblAdded1.FontColor := TAlphaColorRec.Black;
                 Ein1.Start;
                 Aus1.Start;
               end;
@@ -109,17 +119,25 @@ end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
 begin
-  FUebersicht.Hide;
+  //FUebersicht.Hide;
   FSettings.ShowModal;
 end;
 
 procedure TFUebersicht.BtnWarenkorbClick(Sender: TObject);
-var
-  I: Integer;
 begin
   FUebersicht.Hide;
   FWare.Show;
-  //FWare.anzeige;
+end;
+
+procedure TFUebersicht.EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
+  var KeyChar: Char; Shift: TShiftState);
+  const myNum = ['0','1','2','3','4','5','6','7','8','9','0'];
+begin
+  if not (keychar in myNum) then
+  begin
+    keychar := char(0);
+    key := 0;
+  end;
 end;
 
 procedure TFUebersicht.Ware;
