@@ -26,12 +26,14 @@ type
     Aus3: TFloatAnimation;
     Ein4: TFloatAnimation;
     Aus4: TFloatAnimation;
+    BtnWarenkorb: TButton;
     procedure BtnBackClick(Sender: TObject);
     procedure BtnPurClick(Sender: TObject);
     procedure BtnGerVerClick(Sender: TObject);
     procedure BtnVglClick(Sender: TObject);
     procedure BtnBerufungClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BtnWarenkorbClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -59,6 +61,14 @@ begin
   FUebersicht.Show;
 end;
 
+procedure TFBriefMahn.BtnWarenkorbClick(Sender: TObject);
+begin
+  FBriefMahn.Hide;
+  FWare.Show;
+end;
+
+
+
 procedure TFBriefMahn.BtnPurClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(1, FWare.GrdWarenkorb);
@@ -79,6 +89,8 @@ begin
   Ein4.Start;
   Aus4.Start;
 end;
+
+
 
 procedure TFBriefMahn.BtnBerufungClick(Sender: TObject);
 begin

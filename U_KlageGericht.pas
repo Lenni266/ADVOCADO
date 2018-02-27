@@ -50,6 +50,7 @@ begin
  FUebersicht.Show;
 end;
 
+
 procedure TFKlage.BtnBackClick(Sender: TObject);
 begin
   FKlage.Hide;
@@ -78,8 +79,7 @@ begin
   Aus2.Start;
 end;
 
-
-procedure TFKlage.BtnBerufClick(Sender: TObject);
+procedure TFKlage.BtnBerufClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(12, FWare.GrdWarenkorb);
   Ein3.Start;

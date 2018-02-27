@@ -30,6 +30,7 @@ type
     Aus3: TFloatAnimation;
     Aus4: TFloatAnimation;
     Aus5: TFloatAnimation;
+    BtnWarenkorb: TButton;
     procedure BtnBackClick(Sender: TObject);
     procedure BtnPurClick(Sender: TObject);
     procedure BtnVollClick(Sender: TObject);
@@ -37,6 +38,7 @@ type
     procedure BtnKlageBerufClick(Sender: TObject);
     procedure BtnKlageVerglClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BtnWarenkorbClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -52,11 +54,25 @@ implementation
 
 uses U_Uebersicht, U_RVG, U_Warenkorb;
 
+procedure TFBriefMahnVoll.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FUebersicht.Show;
+end;
+
+
 procedure TFBriefMahnVoll.BtnBackClick(Sender: TObject);
 begin
   FBriefMahnVoll.Hide;
   FUebersicht.show;
 end;
+
+procedure TFBriefMahnVoll.BtnWarenkorbClick(Sender: TObject);
+begin
+  FBriefMahnVoll.Hide;
+  FWare.Show;
+end;
+
+
 
 procedure TFBriefMahnVoll.BtnPurClick(Sender: TObject);
 begin
@@ -91,14 +107,6 @@ begin
   FWare.Warenkorb.Add(9, FWare.GrdWarenkorb);
   Ein4.Start;
   Aus4.Start;
-end;
-
-
-
-
-procedure TFBriefMahnVoll.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  FUebersicht.Show;
 end;
 
 end.

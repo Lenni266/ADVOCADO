@@ -11,7 +11,7 @@ object FKlage: TFKlage
   DesignerMasterStyle = 0
   object BtnBack: TButton
     Position.X = 20.000000000000000000
-    Position.Y = 270.000000000000000000
+    Position.Y = 254.000000000000000000
     Size.Width = 169.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
@@ -20,8 +20,8 @@ object FKlage: TFKlage
     OnClick = BtnBackClick
   end
   object BtnGericht: TButton
-    Position.X = 44.000000000000000000
-    Position.Y = 46.000000000000000000
+    Position.X = 56.000000000000000000
+    Position.Y = 38.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -30,8 +30,8 @@ object FKlage: TFKlage
     OnClick = BtnGerichtClick
   end
   object BtnVgl: TButton
-    Position.X = 44.000000000000000000
-    Position.Y = 102.000000000000000000
+    Position.X = 56.000000000000000000
+    Position.Y = 94.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -40,8 +40,8 @@ object FKlage: TFKlage
     OnClick = BtnVglClick
   end
   object BtnBeruf: TButton
-    Position.X = 44.000000000000000000
-    Position.Y = 158.000000000000000000
+    Position.X = 56.000000000000000000
+    Position.Y = 150.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -51,8 +51,8 @@ object FKlage: TFKlage
   end
   object LblAdded1: TLabel
     Opacity = 0.000000000000000000
-    Position.X = 212.000000000000000000
-    Position.Y = 62.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 54.000000000000000000
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
@@ -73,8 +73,8 @@ object FKlage: TFKlage
   end
   object LblAdded2: TLabel
     Opacity = 0.000000000000000000
-    Position.X = 212.000000000000000000
-    Position.Y = 118.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 110.000000000000000000
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
@@ -95,8 +95,8 @@ object FKlage: TFKlage
   end
   object LblAdded3: TLabel
     Opacity = 0.000000000000000000
-    Position.X = 212.000000000000000000
-    Position.Y = 174.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 166.000000000000000000
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
@@ -117,7 +117,7 @@ object FKlage: TFKlage
   end
   object BtnWarenkorb: TButton
     Position.X = 252.000000000000000000
-    Position.Y = 270.000000000000000000
+    Position.Y = 254.000000000000000000
     Size.Width = 169.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
