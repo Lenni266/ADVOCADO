@@ -1,9 +1,6 @@
 inherited FWare_Windows: TFWare_Windows
   DesignerMasterStyle = 0
   inherited GrdWarenkorb: TGrid
-    inherited StrClmName: TStringColumn
-      Size.Width = 150.000000000000000000
-    end
     inherited ImgClmDel: TImageColumn
       Size.Width = 30.000000000000000000
     end

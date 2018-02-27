@@ -18,7 +18,7 @@ object FUebersicht: TFUebersicht
     StyledSettings = [FontColor]
     Position.X = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 93.000000000000000000
+    Size.Width = 99.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
@@ -30,7 +30,7 @@ object FUebersicht: TFUebersicht
     AutoSize = True
     Position.X = 16.000000000000000000
     Position.Y = 72.000000000000000000
-    Size.Width = 89.000000000000000000
+    Size.Width = 84.000000000000000000
     Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
     Text = 'Streitwert (in '#8364')'
@@ -38,7 +38,6 @@ object FUebersicht: TFUebersicht
   object EdtStreitwert: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 2
-    Text = '1500'
     Position.X = 16.000000000000000000
     Position.Y = 96.000000000000000000
     Size.Width = 201.000000000000000000
@@ -71,10 +70,10 @@ object FUebersicht: TFUebersicht
     OnClick = BtnAuswahlClick
   end
   object BtnWarenkorb: TButton
-    Position.X = 296.000000000000000000
+    Position.X = 280.000000000000000000
     Position.Y = 248.000000000000000000
-    Size.Width = 73.000000000000000000
-    Size.Height = 33.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 7
     Text = 'Warenkorb'
@@ -204,7 +203,7 @@ object FUebersicht: TFUebersicht
     Opacity = 0.000000000000000000
     Position.X = 16.000000000000000000
     Position.Y = 176.000000000000000000
-    Size.Width = 158.000000000000000000
+    Size.Width = 160.000000000000000000
     Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
     TextSettings.FontColor = claRed

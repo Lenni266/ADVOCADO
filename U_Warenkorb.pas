@@ -17,14 +17,11 @@ type
     GrdWarenkorb: TGrid;
     StrClmName: TStringColumn;
     StrClmPrice: TStringColumn;
-    BtnDebug: TButton;
-    Edit1: TEdit;
     ImgClmDel: TImageColumn;
     LblHead: TLabel;
     ImgCtrlDel: TImageControl;
     procedure BtnBackClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure BtnDebugClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GrdWarenkorbGetValue(Sender: TObject; const Col, Row: Integer;
       var Value: TValue);
@@ -65,11 +62,6 @@ procedure TFWare.BtnBackClick(Sender: TObject);
 begin
   FWare.Hide;
   FUebersicht.Show;
-end;
-
-procedure TFWare.BtnDebugClick(Sender: TObject);
-begin
-  Warenkorb.Add(StrToInt(Edit1.Text), GrdWarenkorb);
 end;
 
 procedure TFWare.BtnDelClick(Sender: TObject);
