@@ -34,7 +34,7 @@ object FSettings: TFSettings
     StyledSettings = [FontColor]
     Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
-    Size.Width = 141.000000000000000000
+    Size.Width = 146.000000000000000000
     Size.Height = 21.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
@@ -72,8 +72,8 @@ object FSettings: TFSettings
   end
   object ChkBxDark: TCheckBox
     Enabled = False
-    Position.X = 15.000000000000000000
-    Position.Y = 114.000000000000000000
+    Position.X = 13.000000000000000000
+    Position.Y = 106.000000000000000000
     Size.Width = 169.000000000000000000
     Size.Height = 19.000000000000000000
     Size.PlatformDefault = False
@@ -87,7 +87,7 @@ object FSettings: TFSettings
     Opacity = 0.000000000000000000
     Position.X = 15.000000000000000000
     Position.Y = 96.000000000000000000
-    Size.Width = 198.000000000000000000
+    Size.Width = 201.000000000000000000
     Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
     TextSettings.FontColor = claRed
@@ -114,5 +114,15 @@ object FSettings: TFSettings
     TabOrder = 8
     Text = 'Anwenden'
     OnClick = BtnApplyClick
+  end
+  object LblPercent: TLabel
+    AutoSize = True
+    Position.X = 84.000000000000000000
+    Position.Y = 70.000000000000000000
+    Size.Width = 14.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = '%'
   end
 end

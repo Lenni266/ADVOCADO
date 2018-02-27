@@ -19,6 +19,7 @@ type
     Ein1: TFloatAnimation;
     Aus1: TFloatAnimation;
     BtnApply: TButton;
+    LblPercent: TLabel;
     procedure BtnBackClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure BtnUpdateFRClick(Sender: TObject);

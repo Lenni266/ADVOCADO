@@ -20,10 +20,11 @@ type
     BtnWarenkorb: TButton;
     BtnStreit: TButton;
     BtnSetting: TButton;
-    imgsettings: TImage;
+    ImgSettings: TImage;
     LblAdded1: TLabel;
     Ein1: TFloatAnimation;
     Aus1: TFloatAnimation;
+    ImgLogo: TImage;
     procedure BtnAuswahlClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
