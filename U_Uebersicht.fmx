@@ -1,7 +1,7 @@
 object FUebersicht: TFUebersicht
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu, biMinimize]
+  BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = Single
   Caption = #220'bersicht'
   ClientHeight = 313
@@ -18,7 +18,7 @@ object FUebersicht: TFUebersicht
     StyledSettings = [FontColor]
     Position.X = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 99.000000000000000000
+    Size.Width = 93.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
@@ -27,12 +27,13 @@ object FUebersicht: TFUebersicht
     Text = 'AdvoCat'
   end
   object LblStreitwert: TLabel
+    AutoSize = True
     Position.X = 16.000000000000000000
     Position.Y = 72.000000000000000000
-    Size.Width = 65.000000000000000000
-    Size.Height = 17.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Streitwert'
+    Text = 'Streitwert (in '#8364')'
   end
   object EdtStreitwert: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -203,7 +204,7 @@ object FUebersicht: TFUebersicht
     Opacity = 0.000000000000000000
     Position.X = 16.000000000000000000
     Position.Y = 176.000000000000000000
-    Size.Width = 160.000000000000000000
+    Size.Width = 158.000000000000000000
     Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
     TextSettings.FontColor = claRed

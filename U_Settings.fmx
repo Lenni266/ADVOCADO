@@ -34,7 +34,7 @@ object FSettings: TFSettings
     StyledSettings = [FontColor]
     Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
-    Size.Width = 146.000000000000000000
+    Size.Width = 141.000000000000000000
     Size.Height = 21.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Courier New'
@@ -57,7 +57,8 @@ object FSettings: TFSettings
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     KillFocusByReturn = True
-    OnExit = NmBxFRExit
+    OnChange = NmBxFRChange
+    OnKeyDown = NmBxFRKeyDown
   end
   object BtnUpdateFR: TButton
     Position.X = 103.000000000000000000
@@ -70,21 +71,23 @@ object FSettings: TFSettings
     OnClick = BtnUpdateFRClick
   end
   object ChkBxDark: TCheckBox
+    Enabled = False
     Position.X = 15.000000000000000000
-    Position.Y = 122.000000000000000000
+    Position.Y = 114.000000000000000000
     Size.Width = 169.000000000000000000
     Size.Height = 19.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 7
     Text = 'dunkles Theme aktivieren'
+    OnChange = ChkBxDarkChange
   end
-  object Label1: TLabel
+  object LblLoadFR: TLabel
     AutoSize = True
     StyledSettings = [Family, Size, Style]
     Opacity = 0.000000000000000000
     Position.X = 15.000000000000000000
     Position.Y = 96.000000000000000000
-    Size.Width = 201.000000000000000000
+    Size.Width = 198.000000000000000000
     Size.Height = 16.000000000000000000
     Size.PlatformDefault = False
     TextSettings.FontColor = claRed
@@ -103,5 +106,13 @@ object FSettings: TFSettings
       StartValue = 1.000000000000000000
       StopValue = 0.000000000000000000
     end
+  end
+  object BtnApply: TButton
+    Enabled = False
+    Position.X = 56.000000000000000000
+    Position.Y = 288.000000000000000000
+    TabOrder = 8
+    Text = 'Anwenden'
+    OnClick = BtnApplyClick
   end
 end

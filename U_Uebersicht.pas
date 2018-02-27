@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects, FMX.Grid,
   FMX.Ani,
 
-  U_FRUpdater, U_Settings;
+  U_FRUpdater, U_Settings, U_Utils;
 
 type
   TFUebersicht = class(TForm)
@@ -27,7 +27,6 @@ type
     procedure BtnAuswahlClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
-    procedure Ware;
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -51,14 +50,14 @@ implementation
 
 {$R *.fmx}
 
-uses U_BriefMahnVoll, U_BriefAußGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkorb,
+uses U_BriefMahnVoll, U_KlageGericht, U_BriefMahn, U_Warenkorb,
   U_RVG;
 
 {$R *.Windows.fmx MSWINDOWS}
 
 procedure TFUebersicht.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
- FUebersicht.close;
+  FUebersicht.close;
 end;
 
 procedure TFUebersicht.FormCreate(Sender: TObject);
@@ -74,9 +73,7 @@ end;
 procedure TFUebersicht.FormActivate(Sender: TObject);
 begin
   if FRUpdater.FileExist then
-    FSettings.NmBxFR.Value:= FRUpdater.readFR
-  else
-    // ERROR MESSAGE
+    FSettings.NmBxFR.Value:= FRUpdater.readFR;
 end;
 
 
@@ -85,7 +82,6 @@ procedure TFUebersicht.BtnAuswahlClick(Sender: TObject);
 begin
   if EdtStreitwert.Text = '' then
   begin
-    //raise Exception.Create('Bitte Streitwert eingeben')
     LblAdded1.Text := 'Bitte zuerst Streitwert eingeben!';
     LblAdded1.FontColor := TAlphaColorRec.Red;
     Ein1.Start;
@@ -119,7 +115,6 @@ end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
 begin
-  //FUebersicht.Hide;
   FSettings.ShowModal;
 end;
 
@@ -131,18 +126,18 @@ end;
 
 procedure TFUebersicht.EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);
-  const myNum = ['0','1','2','3','4','5','6','7','8','9','0'];
 begin
-  if not (keychar in myNum) then
+  if not (keychar in myNum) and (key <> ord(#8))
+  and (key <> vkDelete) and (key <> vkRight) and (key <> vkLeft) then
   begin
     keychar := char(0);
     key := 0;
-  end;
-end;
 
-procedure TFUebersicht.Ware;
-begin
-  showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');
+    LblAdded1.Text := 'Bitte nur Zahlen eingeben';
+    LblAdded1.FontColor := TAlphaColorRec.Red;
+    Ein1.Start;
+    Aus1.Start;
+  end;
 end;
 
 end.

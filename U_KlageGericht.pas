@@ -22,12 +22,13 @@ type
     LblAdded3: TLabel;
     Ein3: TFloatAnimation;
     Aus3: TFloatAnimation;
+    BtnWarenkorb: TButton;
     procedure BtnBackClick(Sender: TObject);
-    procedure Ware;
     procedure BtnGerichtClick(Sender: TObject);
     procedure BtnVglClick(Sender: TObject);
     procedure BtnBerufClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BtnWarenkorbClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -43,11 +44,25 @@ implementation
 
 uses U_Uebersicht, U_Warenkorb;
 
+
+procedure TFKlage.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ FUebersicht.Show;
+end;
+
 procedure TFKlage.BtnBackClick(Sender: TObject);
 begin
   FKlage.Hide;
   FUebersicht.Show;
 end;
+
+procedure TFKlage.BtnWarenkorbClick(Sender: TObject);
+begin
+  FKlage.Hide;
+  FWare.Show;
+end;
+
+
 
 procedure TFKlage.BtnGerichtClick(Sender: TObject);
 begin
@@ -63,6 +78,7 @@ begin
   Aus2.Start;
 end;
 
+
 procedure TFKlage.BtnBerufClick(Sender: TObject);
 begin
   FWare.Warenkorb.Add(12, FWare.GrdWarenkorb);
@@ -70,14 +86,4 @@ begin
   Aus3.Start;
 end;
 
-
-procedure TFKlage.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
- FUebersicht.Show;
-end;
-
-procedure TFKlage.Ware;
-begin
- showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');
-end;
 end.
