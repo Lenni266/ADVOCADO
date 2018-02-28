@@ -6,8 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects, FMX.Grid,
+  FMX.Ani,
 
-  U_FRUpdater, U_Settings;
+  U_FRUpdater, U_Settings, U_Utils;
 
 type
   TFUebersicht = class(TForm)
@@ -19,14 +20,19 @@ type
     BtnWarenkorb: TButton;
     BtnStreit: TButton;
     BtnSetting: TButton;
-    imgsettings: TImage;
+    ImgSettings: TImage;
+    LblAdded1: TLabel;
+    Ein1: TFloatAnimation;
+    Aus1: TFloatAnimation;
+    ImgLogo: TImage;
     procedure BtnAuswahlClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
-    procedure Ware;
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
+      var KeyChar: Char; Shift: TShiftState);
 
   private
     { Private-Deklarationen }
@@ -45,14 +51,14 @@ implementation
 
 {$R *.fmx}
 
-uses U_BriefMahnVoll, U_BriefAußGerVerg, U_KlageGericht, U_BriefMahn, U_Warenkorb,
+uses U_BriefMahnVoll, U_KlageGericht, U_BriefMahn, U_Warenkorb,
   U_RVG;
 
 {$R *.Windows.fmx MSWINDOWS}
 
 procedure TFUebersicht.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
- FUebersicht.close;
+  FUebersicht.close;
 end;
 
 procedure TFUebersicht.FormCreate(Sender: TObject);
@@ -68,9 +74,7 @@ end;
 procedure TFUebersicht.FormActivate(Sender: TObject);
 begin
   if FRUpdater.FileExist then
-    FSettings.NmBxFR.Value:= FRUpdater.readFR
-  else
-    // ERROR MESSAGE
+    FSettings.NmBxFR.Value:= FRUpdater.readFR;
 end;
 
 
@@ -78,13 +82,21 @@ end;
 procedure TFUebersicht.BtnAuswahlClick(Sender: TObject);
 begin
   if EdtStreitwert.Text = '' then
-    raise exception.Create ('Bitte Streitwert eingeben')
+  begin
+    LblAdded1.Text := 'Bitte zuerst Streitwert eingeben!';
+    LblAdded1.FontColor := TAlphaColorRec.Red;
+    Ein1.Start;
+    Aus1.Start;
+  end
   else
   begin
     case Dropdownfall.ItemIndex of
           1:  begin
-                //Add('Brief', U_RVG.calcBrief(StrToFloat(EdtStreitwert.Text)));
                 FWare.Warenkorb.Add(0, FWare.GrdWarenkorb);
+                LblAdded1.Text := 'Dem Warenkorb hinzugefügt!';
+                LblAdded1.FontColor := TAlphaColorRec.Black;
+                Ein1.Start;
+                Aus1.Start;
               end;
           2:  begin
                 FUebersicht.hide;
@@ -104,22 +116,29 @@ end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
 begin
-  FUebersicht.Hide;
   FSettings.ShowModal;
 end;
 
 procedure TFUebersicht.BtnWarenkorbClick(Sender: TObject);
-var
-  I: Integer;
 begin
   FUebersicht.Hide;
   FWare.Show;
-  //FWare.anzeige;
 end;
 
-procedure TFUebersicht.Ware;
+procedure TFUebersicht.EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
+  var KeyChar: Char; Shift: TShiftState);
 begin
-  showmessage ('Dem Warenkorb erfolgreich hinzugefügt!');
+  if not (keychar in myNum) and (key <> ord(#8))
+  and (key <> vkDelete) and (key <> vkRight) and (key <> vkLeft) then
+  begin
+    keychar := char(0);
+    key := 0;
+
+    LblAdded1.Text := 'Bitte nur Zahlen eingeben';
+    LblAdded1.FontColor := TAlphaColorRec.Red;
+    Ein1.Start;
+    Aus1.Start;
+  end;
 end;
 
 end.

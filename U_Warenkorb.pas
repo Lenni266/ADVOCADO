@@ -17,20 +17,18 @@ type
     GrdWarenkorb: TGrid;
     StrClmName: TStringColumn;
     StrClmPrice: TStringColumn;
-    BtnDebug: TButton;
-    Edit1: TEdit;
     ImgClmDel: TImageColumn;
     LblHead: TLabel;
     ImgCtrlDel: TImageControl;
     procedure BtnBackClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure BtnDebugClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GrdWarenkorbGetValue(Sender: TObject; const Col, Row: Integer;
       var Value: TValue);
     procedure BtnDelClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure GrdWarenkorbCellClick(const Column: TColumn; const Row: Integer);
+//    procedure GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
   private
     { Private-Deklarationen }
   public
@@ -66,11 +64,6 @@ begin
   FUebersicht.Show;
 end;
 
-procedure TFWare.BtnDebugClick(Sender: TObject);
-begin
-  Warenkorb.Add(StrToInt(Edit1.Text), GrdWarenkorb);
-end;
-
 procedure TFWare.BtnDelClick(Sender: TObject);
 begin
   SetLength(Warenkorb.Content, 0);
@@ -95,6 +88,17 @@ begin
     Warenkorb.Update(GrdWarenkorb);
   end;
 end;
+
+//procedure TFWare.GrdWarenkorbSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
+//begin
+//  if ACol = 2 then
+//  begin
+//    DelIntArrElement(Warenkorb.Content, ARow);
+//    Warenkorb.Update(GrdWarenkorb);
+//  end;
+//end;
+
+
 
 procedure TFWare.GrdWarenkorbGetValue(Sender: TObject; const Col, Row: Integer;
   var Value: TValue);

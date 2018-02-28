@@ -2,13 +2,17 @@ unit U_Utils;
 
 interface
 
-uses FMX.Grid, FMX.Controls, System.Classes;
+uses FMX.Grid, FMX.Controls, System.Classes, System.SysUtils, System.UITypes;
 
 type
   TIntArray = array of integer;
 
 procedure DelIntArrElement(var AArray: TIntArray; const AIndex: Integer);
 procedure DelayedSetFocus(control : TControl);
+function IsStrFloatNum(s: string): Boolean;
+
+const myNum = ['0','1','2','3','4','5','6','7','8','9','0'];
+const navKeys = [vkDelete, vkBack, vkLeft, vkRight];
 
 implementation
 
@@ -34,6 +38,17 @@ begin
       );
     end
   ).Start;
+end;
+
+
+function IsStrFloatNum(s: string): Boolean;
+begin
+  try
+    StrToFloat(s);
+    Result := True;
+  except
+    Result := False;
+  end;
 end;
 
 end.

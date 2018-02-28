@@ -3,16 +3,17 @@ object FBriefMahnVoll: TFBriefMahnVoll
   Top = 0
   BorderStyle = Single
   Caption = 'Brief-Mahnung Vollstreckungsbescheid'
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 452
+  ClientWidth = 441
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnClose = FormClose
   DesignerMasterStyle = 0
   object BtnBack: TButton
-    Position.X = 32.000000000000000000
-    Position.Y = 384.000000000000000000
+    Locked = True
+    Position.X = 20.000000000000000000
+    Position.Y = 367.000000000000000000
     Size.Width = 169.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
@@ -21,8 +22,9 @@ object FBriefMahnVoll: TFBriefMahnVoll
     OnClick = BtnBackClick
   end
   object BtnPur: TButton
-    Position.X = 88.000000000000000000
-    Position.Y = 56.000000000000000000
+    Locked = True
+    Position.X = 56.000000000000000000
+    Position.Y = 39.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -31,8 +33,9 @@ object FBriefMahnVoll: TFBriefMahnVoll
     OnClick = BtnPurClick
   end
   object BtnVoll: TButton
-    Position.X = 88.000000000000000000
-    Position.Y = 112.000000000000000000
+    Locked = True
+    Position.X = 56.000000000000000000
+    Position.Y = 95.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -41,8 +44,9 @@ object FBriefMahnVoll: TFBriefMahnVoll
     OnClick = BtnVollClick
   end
   object BtnGerLose: TButton
-    Position.X = 88.000000000000000000
-    Position.Y = 168.000000000000000000
+    Locked = True
+    Position.X = 56.000000000000000000
+    Position.Y = 151.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -51,8 +55,9 @@ object FBriefMahnVoll: TFBriefMahnVoll
     OnClick = BtnGerLoseClick
   end
   object BtnKlageBeruf: TButton
-    Position.X = 88.000000000000000000
-    Position.Y = 224.000000000000000000
+    Locked = True
+    Position.X = 56.000000000000000000
+    Position.Y = 207.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -61,13 +66,140 @@ object FBriefMahnVoll: TFBriefMahnVoll
     OnClick = BtnKlageBerufClick
   end
   object BtnKlageVergl: TButton
-    Position.X = 88.000000000000000000
-    Position.Y = 280.000000000000000000
+    Locked = True
+    Position.X = 56.000000000000000000
+    Position.Y = 263.000000000000000000
     Size.Width = 153.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     Text = '+ Klage-Vergleich'
     OnClick = BtnKlageVerglClick
+  end
+  object LblAdded1: TLabel
+    Locked = True
+    Opacity = 0.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 55.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein1: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus1: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded2: TLabel
+    Locked = True
+    Opacity = 0.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 111.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein2: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus2: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded3: TLabel
+    Locked = True
+    Opacity = 0.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 167.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein3: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus3: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded4: TLabel
+    Locked = True
+    Opacity = 0.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 223.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein4: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus4: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object LblAdded5: TLabel
+    Locked = True
+    Opacity = 0.000000000000000000
+    Position.X = 224.000000000000000000
+    Position.Y = 279.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    object Ein5: TFloatAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object Aus5: TFloatAnimation
+      Delay = 2.000000000000000000
+      Duration = 0.200000002980232200
+      PropertyName = 'Opacity'
+      StartValue = 1.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object BtnWarenkorb: TButton
+    Locked = True
+    Position.X = 252.000000000000000000
+    Position.Y = 367.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Warenkorb'
+    OnClick = BtnWarenkorbClick
   end
 end

@@ -12,7 +12,7 @@ object FWare: TFWare
   OnClose = FormClose
   DesignerMasterStyle = 0
   object BtnBack: TButton
-    Position.X = 331.000000000000000000
+    Position.X = 339.000000000000000000
     Position.Y = 56.000000000000000000
     Size.Width = 154.000000000000000000
     Size.Height = 52.000000000000000000
@@ -22,7 +22,7 @@ object FWare: TFWare
     OnClick = BtnBackClick
   end
   object BtnDel: TButton
-    Position.X = 331.000000000000000000
+    Position.X = 339.000000000000000000
     Position.Y = 124.000000000000000000
     Size.Width = 154.000000000000000000
     Size.Height = 52.000000000000000000
@@ -34,9 +34,9 @@ object FWare: TFWare
   object GrdWarenkorb: TGrid
     CanFocus = True
     ClipChildren = True
-    Position.X = 22.000000000000000000
+    Position.X = 24.000000000000000000
     Position.Y = 56.000000000000000000
-    Size.Width = 288.000000000000000000
+    Size.Width = 297.000000000000000000
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
@@ -44,41 +44,25 @@ object FWare: TFWare
     RowCount = 0
     OnGetValue = GrdWarenkorbGetValue
     OnCellClick = GrdWarenkorbCellClick
-    Viewport.Width = 284.000000000000000000
+    Viewport.Width = 293.000000000000000000
     Viewport.Height = 248.000000000000000000
     object StrClmName: TStringColumn
       Locked = True
       Header = 'Typ'
       ReadOnly = True
-      Size.Width = 150.000000000000000000
+      Size.Width = 130.000000000000000000
     end
     object StrClmPrice: TStringColumn
       Locked = True
       Header = 'Preis'
       ReadOnly = True
+      Size.Width = 65.000000000000000000
     end
     object ImgClmDel: TImageColumn
       Locked = True
       ReadOnly = True
-      Size.Width = 20.000000000000000000
+      Size.Width = 35.000000000000000000
     end
-  end
-  object BtnDebug: TButton
-    Position.X = 353.000000000000000000
-    Position.Y = 271.000000000000000000
-    Size.Width = 97.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 3
-    Text = 'BtnDebug'
-    OnClick = BtnDebugClick
-  end
-  object Edit1: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 4
-    Text = '0'
-    Position.X = 353.000000000000000000
-    Position.Y = 223.000000000000000000
   end
   object LblHead: TLabel
     AutoSize = True
@@ -652,12 +636,13 @@ object FWare: TFWare
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000B2288AFE3FB859BA71410DC4
       CC0000000049454E44AE426082}
-    Position.X = 361.000000000000000000
-    Position.Y = 303.000000000000000000
-    Size.Width = 73.000000000000000000
-    Size.Height = 57.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 5
+    CanFocus = False
+    Enabled = False
+    HitTest = False
+    Position.X = 352.000000000000000000
+    Position.Y = 216.000000000000000000
+    TabOrder = 4
+    TabStop = False
     Visible = False
   end
 end
