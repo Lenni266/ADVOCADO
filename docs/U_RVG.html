@@ -1,23 +1,20 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <title>AdvoCat: U_RVG</title>
-<meta name="generator" content="PasDoc 0.14.0">
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-15">
-<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
-<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
-<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
-<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
 
 <link rel="StyleSheet" type="text/css" href="pasdoc.css">
 </head>
 <body>
 <table class="container"><tr><td class="navigation">
-<h2>AdvoCat</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Klassenhierarchie</a></p><p><a href="AllClasses.html" class="navigation">Klassen, Interfaces und Objects</a></p><p><a href="AllTypes.html" class="navigation">Datentypen</a></p><p><a href="AllVariables.html" class="navigation">Variablen</a></p><p><a href="AllConstants.html" class="navigation">Konstanten</a></p><p><a href="AllFunctions.html" class="navigation">Funktionen und Prozeduren</a></p><p><a href="AllIdentifiers.html" class="navigation">Bezeichner</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<h2>AdvoCat</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Klassenhierarchie</a></p><p><a href="AllClasses.html" class="navigation">Klassen, Interfaces und Objects</a></p><p><a href="AllTypes.html" class="navigation">Datentypen</a></p><p><a href="AllVariables.html" class="navigation">Variablen</a></p><p><a href="AllConstants.html" class="navigation">Konstanten</a></p><p><a href="AllFunctions.html" class="navigation">Funktionen und Prozeduren</a></p><p><a href="AllIdentifiers.html" class="navigation">Bezeichner</a></p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
 <div style="clear: both"></div>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function() {
     $('#tipue_search_input').tipuesearch({
         /* 10 items to display seems standard */
@@ -28,35 +25,71 @@ $(document).ready(function() {
     });
 });
 </script>
-</p></td><td class="content">
+</td><td class="content">
 <h1 class="unit">Unit U_RVG</h1>
-<table class="sections wide_list">
-<tr>
-<td><a class="section" href="#PasDoc-Description">Beschreibung</a></td><td><a class="section" href="#PasDoc-Uses">Uses</a></td><td>Klassen, Interfaces und Objects</td><td><a class="section" href="#PasDoc-FuncsProcs">Funktionen und Prozeduren</a></td><td>Datentypen</td><td>Konstanten</td><td>Variablen</td></tr></table>
-<a name="PasDoc-Description"></a><h2 class="description">Beschreibung</h2>
-&nbsp;<a name="PasDoc-Uses"></a><h2 class="uses">Uses</h2>
-<ul class="useslist"><li>System.SysUtils</li></ul><h2 class="overview">�bersicht</h2>
-<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Funktionen und Prozeduren</h3>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Beschreibung</a></div><div class="one_section">Uses</div><div class="one_section">Klassen, Interfaces und Objects</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Funktionen und Prozeduren</a></div><div class="one_section">Datentypen</div><div class="one_section">Konstanten</div><div class="one_section">Variablen</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Beschreibung</h2>
+<p>
+Berechnung der Einfachgebühr, der Gerichtskosten und aller möglichen Fälle.</p>
+<span id="PasDoc-Uses"></span><h2 class="overview">Übersicht</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Funktionen und Prozeduren</h3>
 <table class="summary wide_list">
 <tr class="list">
 <td class="itemcode"><code>function <b><a  href="U_RVG.html#calcEinfach">calcEinfach</a></b>(streitwert: real): real;</code></td>
 </tr>
 <tr class="list2">
-<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBrief">calcBrief</a></b>(streitwert: real): real;</code></td>
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcGKG">calcGKG</a></b>(streitwert: real): real;</code></td>
 </tr>
 <tr class="list">
-<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcMahnungBrief">calcMahnungBrief</a></b>(streitwert: real): real;</code></td>
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBrief">calcBrief</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahn">calcBriefMahn</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnKlageGerichtVerlieren">calcBriefMahnKlageGerichtVerlieren</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnKlageVergleich">calcBriefMahnKlageVergleich</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnKlageBerufung">calcBriefMahnKlageBerufung</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnvollBesch">calcBriefMahnvollBesch</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnvollBeschVoll">calcBriefMahnvollBeschVoll</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnVollBeschKlageGerichtVerlieren">calcBriefMahnVollBeschKlageGerichtVerlieren</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnVollBeschKlageVergleich">calcBriefMahnVollBeschKlageVergleich</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcBriefMahnVollBeschKlageBerufung">calcBriefMahnVollBeschKlageBerufung</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcKlageGerichtVerlieren">calcKlageGerichtVerlieren</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcKlageVergleich">calcKlageVergleich</a></b>(streitwert: real): real;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_RVG.html#calcKlageBerufung">calcKlageBerufung</a></b>(streitwert: real): real;</code></td>
 </tr>
 </table>
 <h2 class="description">Beschreibung</h2>
 <h3 class="detail">Funktionen und Prozeduren</h3>
 <table class="detail wide_list">
 <tr class="list">
-<td class="itemcode"><a name="calcEinfach"></a><code>function <b>calcEinfach</b>(streitwert: real): real;</code></td>
+<td class="itemcode"><span id="calcEinfach"></span><code>function <b>calcEinfach</b>(streitwert: real): real;</code></td>
 </tr>
 <tr><td colspan="1">
 <p>
-Berechnet die Einfachgebuehr nach dem RVG  </p>
+Berechnet die Einfachgebühr nach dem RVG.  </p>
 <h6 class="description_section">Parameter</h6>
 <dl class="parameters">
 <dt>streitwert</dt>
@@ -67,18 +100,214 @@ Berechnet die Einfachgebuehr nach dem RVG  </p>
 </table>
 <table class="detail wide_list">
 <tr class="list">
-<td class="itemcode"><a name="calcBrief"></a><code>function <b>calcBrief</b>(streitwert: real): real;</code></td>
+<td class="itemcode"><span id="calcGKG"></span><code>function <b>calcGKG</b>(streitwert: real): real;</code></td>
 </tr>
 <tr><td colspan="1">
-&nbsp;</td></tr>
+<p>
+Berechnet die Gerichtskostengebühr nach dem GKG.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die berechneten Gerichtskostengebühr als <b>Float</b>.</p></td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
-<td class="itemcode"><a name="calcMahnungBrief"></a><code>function <b>calcMahnungBrief</b>(streitwert: real): real;</code></td>
+<td class="itemcode"><span id="calcBrief"></span><code>function <b>calcBrief</b>(streitwert: real): real;</code></td>
 </tr>
 <tr><td colspan="1">
-&nbsp;</td></tr>
+<p>
+Berechnet die Kosten eines Briefs.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs.</p></td></tr>
 </table>
-<hr noshade size="1"><span class="appinfo"><em>Erstellt mit <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahn"></span><code>function <b>calcBriefMahn</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit einem Mahnbescheid.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit Mahnbescheid.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnKlageGerichtVerlieren"></span><code>function <b>calcBriefMahnKlageGerichtVerlieren</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit einer darauf folgenden Klage und einem Gerichtsverfahren.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit einer darauf folgenden Klage und einem Gerichtsverfahren.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnKlageVergleich"></span><code>function <b>calcBriefMahnKlageVergleich</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit einer darauf folgenden Klage und einem Vergleich.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit einer darauf folgenden Klage und einem Vergleich.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnKlageBerufung"></span><code>function <b>calcBriefMahnKlageBerufung</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit einer darauf folgenden Klage und eingegangener Berufung.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit einer darauf folgenden Klage und eingegangener Berufung.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnvollBesch"></span><code>function <b>calcBriefMahnvollBesch</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnvollBeschVoll"></span><code>function <b>calcBriefMahnvollBeschVoll</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid mit Vollstreckung.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid mit Vollstreckung.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnVollBeschKlageGerichtVerlieren"></span><code>function <b>calcBriefMahnVollBeschKlageGerichtVerlieren</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Gerichtsverfahren.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Gerichtsverfahren.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnVollBeschKlageVergleich"></span><code>function <b>calcBriefMahnVollBeschKlageVergleich</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Vergleich.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Vergleich.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcBriefMahnVollBeschKlageBerufung"></span><code>function <b>calcBriefMahnVollBeschKlageBerufung</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und eingegangener Berufung.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und eingegangener Berufung.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcKlageGerichtVerlieren"></span><code>function <b>calcKlageGerichtVerlieren</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten einer direkten Klage mit Gerichtsverfahren.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten einer direkten Klage mit Gerichtsverfahren.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcKlageVergleich"></span><code>function <b>calcKlageVergleich</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten einer direkten Klage mit Vergleich.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten einer direkten Klage mit Vergleich.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="calcKlageBerufung"></span><code>function <b>calcKlageBerufung</b>(streitwert: real): real;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Berechnet die Kosten einer direkten Klage mit eingegangener Berufung.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion <a class="normal" href="U_RVG.html#calcEinfach">calcEinfach</a> in die Einfachgebühr umgerechnet wurde.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Die Gesamtkosten einer direkten Klage mit eingegangener Berufung.</p></td></tr>
+</table>
+<hr><span class="appinfo"><em>Erstellt mit <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
 </span>
 </td></tr></table></body></html>

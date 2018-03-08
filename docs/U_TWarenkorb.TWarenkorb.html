@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>AdvoCat: U_TWarenkorb: Klasse TWarenkorb</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>AdvoCat</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Klassenhierarchie</a></p><p><a href="AllClasses.html" class="navigation">Klassen, Interfaces und Objects</a></p><p><a href="AllTypes.html" class="navigation">Datentypen</a></p><p><a href="AllVariables.html" class="navigation">Variablen</a></p><p><a href="AllConstants.html" class="navigation">Konstanten</a></p><p><a href="AllFunctions.html" class="navigation">Funktionen und Prozeduren</a></p><p><a href="AllIdentifiers.html" class="navigation">Bezeichner</a></p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</td><td class="content">
+<span id="TWarenkorb"></span><h1 class="cio">Klasse TWarenkorb</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Beschreibung</a></div><div class="one_section"><a class="section" href="#PasDoc-Hierarchy">Hierarchie</a></div><div class="one_section"><a class="section" href="#PasDoc-Fields">Felder</a></div><div class="one_section"><a class="section" href="#PasDoc-Methods">Methoden</a></div><div class="one_section">Eigenschaften</div></div>
+<span id="PasDoc-Description"></span><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="U_TWarenkorb.html">U_TWarenkorb</a></p>
+<h2 class="declaration">Deklaration</h2>
+<p class="declaration">
+<code>type TWarenkorb = class(TObject)</code></p>
+<h2 class="description">Beschreibung</h2>
+<p>
+Klasse, welche für die Auswahl zuständig ist.</p>
+<span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchie</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="thisitem">TWarenkorb</li></ul><h2 class="overview">Übersicht</h2>
+<span id="PasDoc-Fields"></span><h3 class="summary">Felder</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="U_TWarenkorb.TWarenkorb.html#Content">Content</a></b>: <a  href="U_Utils.html#TIntArray">TIntArray</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="U_TWarenkorb.TWarenkorb.html#Functions">Functions</a></b>: array[0..12] of <a  href="U_TWarenkorb.html#TRVGFunc">TRVGFunc</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>intern const <b><a  href="U_TWarenkorb.TWarenkorb.html#Names">Names</a></b>: array[0..12] of string = (
+         ('Brief'),
+
+         ('Brief-Mahn'),
+         ('Brief-Mahn-Klage-Gericht-Verlieren'),
+         ('Brief-Mahn-Klage-Vergleich'),
+         ('Brief-Mahn-Klage-Berufung'),
+
+         ('Brief-Mahn-Vollbesch'),
+         ('Brief-Mahn-VollBesch-Voll'),
+         ('Brief-Mahn-VollBesch-Klage-Gericht-Verlieren'),
+         ('Brief-Mahn-VollBesch-Klage-Vergleich'),
+         ('Brief-Mahn-VollBesch-Klage-Berufung'),
+
+         ('Klage-Gericht-Verlieren'),
+
+         ('Klage-Vergleich'),
+
+         ('Klage-Berufung')
+      );</code></td>
+</tr>
+</table>
+<span id="PasDoc-Methods"></span><h3 class="summary">Methoden</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="U_TWarenkorb.TWarenkorb.html#Add">Add</a></b>(itemId: integer; aGrid: TGrid);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="U_TWarenkorb.TWarenkorb.html#Update">Update</a></b>(aGrid: TGrid);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="U_TWarenkorb.TWarenkorb.html#getPrice">getPrice</a></b>(itemId: integer; streitwert: real):real;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="U_TWarenkorb.TWarenkorb.html#Create">Create</a></b>;</code></td>
+</tr>
+</table>
+<h2 class="description">Beschreibung</h2>
+<h3 class="detail">Felder</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Content"></span><code><b>Content</b>: <a  href="U_Utils.html#TIntArray">TIntArray</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Beinhaltet alle ausgewählten Fälle bzw. deren IDs (0-12).</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Functions"></span><code><b>Functions</b>: array[0..12] of <a  href="U_TWarenkorb.html#TRVGFunc">TRVGFunc</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Beinhaltet die Referenzen zu den <a class="normal" href="U_TWarenkorb.html#TRVGFunc">TRVGFunc</a>-Funktionen, zur Berechnung der Fälle.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Names"></span><code>intern const <b>Names</b>: array[0..12] of string = (
+         ('Brief'),
+
+         ('Brief-Mahn'),
+         ('Brief-Mahn-Klage-Gericht-Verlieren'),
+         ('Brief-Mahn-Klage-Vergleich'),
+         ('Brief-Mahn-Klage-Berufung'),
+
+         ('Brief-Mahn-Vollbesch'),
+         ('Brief-Mahn-VollBesch-Voll'),
+         ('Brief-Mahn-VollBesch-Klage-Gericht-Verlieren'),
+         ('Brief-Mahn-VollBesch-Klage-Vergleich'),
+         ('Brief-Mahn-VollBesch-Klage-Berufung'),
+
+         ('Klage-Gericht-Verlieren'),
+
+         ('Klage-Vergleich'),
+
+         ('Klage-Berufung')
+      );</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Die Namen aller möglichen Fälle. Je nach ID (0-12) wird der Name des dazugehörigen Falls im Array gespeichert, um im <b>TGrid</b> angezeigt zu werden.</p>
+</td></tr>
+</table>
+<h3 class="detail">Methoden</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Add"></span><code>procedure <b>Add</b>(itemId: integer; aGrid: TGrid);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Vergrößert das TGrid um eine Zeile und übergibt die ID des ausgewählten Falls, damit später der Name und Preis des richtigen Falls eingetragen wird.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Update"></span><code>procedure <b>Update</b>(aGrid: TGrid);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Aktualisiert das TGrid, damit alle neu ausgewählten Fälle angezeigt werden.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="getPrice"></span><code>function <b>getPrice</b>(itemId: integer; streitwert: real):real;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Ruft die durch den Constructor <a class="normal" href="U_TWarenkorb.TWarenkorb.html#Create">Create</a> gespeicherte Funktion auf.   </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>itemID</dt>
+<dd>Die durch Knopfdruck übergebene ID des ausgewählten Falls.</dd>
+<dt>streitwert</dt>
+<dd>Der Streitwert des Falls, der an die Berechnungsfunktionen weitergegeben wird.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Den ausgegeben Preis auf zwei Nachkommastellen gerundet.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Create"></span><code>constructor <b>Create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Speichert die ausgewählte Berechnungsfunktion in <a class="normal" href="U_TWarenkorb.TWarenkorb.html#Functions">Functions</a>, die später ausgeführt werden soll.</p>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Erstellt mit <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

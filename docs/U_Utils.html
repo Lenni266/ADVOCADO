@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>AdvoCat: U_Utils</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>AdvoCat</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Klassenhierarchie</a></p><p><a href="AllClasses.html" class="navigation">Klassen, Interfaces und Objects</a></p><p><a href="AllTypes.html" class="navigation">Datentypen</a></p><p><a href="AllVariables.html" class="navigation">Variablen</a></p><p><a href="AllConstants.html" class="navigation">Konstanten</a></p><p><a href="AllFunctions.html" class="navigation">Funktionen und Prozeduren</a></p><p><a href="AllIdentifiers.html" class="navigation">Bezeichner</a></p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</td><td class="content">
+<h1 class="unit">Unit U_Utils</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Beschreibung</a></div><div class="one_section">Uses</div><div class="one_section">Klassen, Interfaces und Objects</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Funktionen und Prozeduren</a></div><div class="one_section"><a class="section" href="#PasDoc-Types">Datentypen</a></div><div class="one_section"><a class="section" href="#PasDoc-Constants">Konstanten</a></div><div class="one_section">Variablen</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Beschreibung</h2>
+<p>
+Sammlung von praktischen Methoden.</p>
+<span id="PasDoc-Uses"></span><h2 class="overview">Übersicht</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Funktionen und Prozeduren</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="U_Utils.html#DelIntArrElement">DelIntArrElement</a></b>(var AArray: <a  href="U_Utils.html#TIntArray">TIntArray</a>; const AIndex: Integer);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="U_Utils.html#DelayedSetFocus">DelayedSetFocus</a></b>(AControl : TControl);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="U_Utils.html#IsStrFloatNum">IsStrFloatNum</a></b>(s: string): Boolean;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Types"></span><h3 class="summary">Datentypen</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="U_Utils.html#TIntArray">TIntArray</a></b> = array of integer;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Constants"></span><h3 class="summary">Konstanten</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="U_Utils.html#numKeys">numKeys</a></b> = ['0','1','2','3','4','5','6','7','8','9','0'];</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="U_Utils.html#navKeys">navKeys</a></b> = [vkDelete, vkBack, vkLeft, vkRight];</code></td>
+</tr>
+</table>
+<h2 class="description">Beschreibung</h2>
+<h3 class="detail">Funktionen und Prozeduren</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="DelIntArrElement"></span><code>procedure <b>DelIntArrElement</b>(var AArray: <a  href="U_Utils.html#TIntArray">TIntArray</a>; const AIndex: Integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Löscht ein Objekt aus einem dynamischen Array des Typs <a class="normal" href="U_Utils.html#TIntArray">TIntArray</a>, ohne das eine Lücke entsteht.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>AArray</dt>
+<dd>Ein dynamischer Array des Typs <a class="normal" href="U_Utils.html#TIntArray">TIntArray</a>.</dd>
+<dt>AIndex</dt>
+<dd>Index des zu löschenden Elements.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="DelayedSetFocus"></span><code>procedure <b>DelayedSetFocus</b>(AControl : TControl);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Ermöglicht das synchrone fokussieren eines <b>TControl</b>-Objekts. </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>AControl</dt>
+<dd>Ein <b>TControl</b>-Objekt.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="IsStrFloatNum"></span><code>function <b>IsStrFloatNum</b>(s: string): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Überprüft ob der übergebene <b>String</b> als <b>Float</b> dargestellt werden kann.  </p>
+<h6 class="description_section">Parameter</h6>
+<dl class="parameters">
+<dt>s</dt>
+<dd>Ein <b>String</b>.</dd>
+</dl>
+<h6 class="description_section">Result</h6>
+<p class="return">Falls der String als Float dargestellt werden kann <code>True</code>, ansonsten <code>False</code>.</p></td></tr>
+</table>
+<h3 class="detail">Datentypen</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="TIntArray"></span><code><b>TIntArray</b> = array of integer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Dynamisches Array des Typs <b>Integer</b>.</p>
+</td></tr>
+</table>
+<h3 class="detail">Konstanten</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="numKeys"></span><code><b>numKeys</b> = ['0','1','2','3','4','5','6','7','8','9','0'];</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Array von Chars, welche eine Zahl darstellen (0-9).</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="navKeys"></span><code><b>navKeys</b> = [vkDelete, vkBack, vkLeft, vkRight];</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Array von Virtual Keys, welche bei der Eingabe in ein Edit-Feld benötigt werden.</p>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Erstellt mit <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>
