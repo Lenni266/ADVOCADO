@@ -1,12 +1,14 @@
 ﻿unit U_Uebersicht;
 
+{< Form, die beim Start der Anwendung angezeigt wird, und dazugehörige Prozeduren. }
+
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Objects, FMX.Grid,
-  FMX.Ani,
+  FMX.Ani, FMX.Styles,
 
   U_FRUpdater, U_Settings, U_Utils;
 
@@ -16,7 +18,7 @@ type
     LblStreitwert: TLabel;
     EdtStreitwert: TEdit;
     DropdownFall: TComboBox;
-    BtnAuswahl: TButton;
+    BtnAdd: TButton;
     BtnWarenkorb: TButton;
     BtnStreit: TButton;
     BtnSetting: TButton;
@@ -25,7 +27,8 @@ type
     Ein1: TFloatAnimation;
     Aus1: TFloatAnimation;
     ImgLogo: TImage;
-    procedure BtnAuswahlClick(Sender: TObject);
+    StBkDark: TStyleBook;
+    procedure BtnAddClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -33,19 +36,15 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
       var KeyChar: Char; Shift: TShiftState);
-
-  private
-    { Private-Deklarationen }
-  public
-
+    procedure ImgLogoClick(Sender: TObject);
   end;
 
 var
   FUebersicht: TFUebersicht;
-  URL: string;
-  FileName: string;
-  anzahl: integer;
+  { Der Updater für den Leitzins. }
   FRUpdater: TFRUpdater;
+  { Gibt an, ob das dunkle Theme aktiviert ist. }
+  DarkFlag: boolean;
 
 implementation
 
@@ -62,6 +61,8 @@ begin
 end;
 
 procedure TFUebersicht.FormCreate(Sender: TObject);
+var
+  URL, FileName: string;
 begin
   URL:= 'http://sdw.ecb.europa.eu/quickviewexport.do?SERIES_KEY=143.FM.B.U2.EUR.4F.KR.MRR_FR.LEV&type=csv';
   FileName:= 'leitzins.dat';
@@ -69,6 +70,26 @@ begin
 
   if FRUpdater.HasInternet then
     FRUpdater.updateFR;
+
+  DarkFlag := false;
+end;
+
+procedure TFUebersicht.ImgLogoClick(Sender: TObject);
+var
+  style: TFMXObject;
+begin
+  style := TStyleStreaming.LoadFromResource(HInstance, 'Dark', RT_RCDATA);
+
+  if DarkFlag then
+  begin
+    TStyleManager.SetStyle(nil);
+    DarkFlag := false;
+  end
+  else
+  begin
+    TStyleManager.SetStyle(style);
+    DarkFlag := true;
+  end;
 end;
 
 procedure TFUebersicht.FormActivate(Sender: TObject);
@@ -78,8 +99,7 @@ begin
 end;
 
 
-
-procedure TFUebersicht.BtnAuswahlClick(Sender: TObject);
+procedure TFUebersicht.BtnAddClick(Sender: TObject);
 begin
   if EdtStreitwert.Text = '' then
   begin
@@ -91,9 +111,15 @@ begin
   else
   begin
     case Dropdownfall.ItemIndex of
+          0:  begin
+                LblAdded1.Text := 'Bitte zuerst einen Fall auswählen!';
+                LblAdded1.FontColor := TAlphaColorRec.Red;
+                Ein1.Start;
+                Aus1.Start;
+              end;
           1:  begin
                 FWare.Warenkorb.Add(0, FWare.GrdWarenkorb);
-                LblAdded1.Text := 'Dem Warenkorb hinzugefügt!';
+                LblAdded1.Text := 'Der Auswahl hinzugefügt!';
                 LblAdded1.FontColor := TAlphaColorRec.Black;
                 Ein1.Start;
                 Aus1.Start;
@@ -128,7 +154,7 @@ end;
 procedure TFUebersicht.EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);
 begin
-  if not (keychar in myNum) and (key <> ord(#8))
+  if not (keychar in numKeys) and (key <> ord(#8))
   and (key <> vkDelete) and (key <> vkRight) and (key <> vkLeft) then
   begin
     keychar := char(0);

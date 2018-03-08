@@ -1,14 +1,17 @@
 object FBriefMahn: TFBriefMahn
-  Left = 0
-  Top = 0
+  Left = 616
+  Top = 249
   BorderStyle = Single
   Caption = 'Brief - Mahnbescheid'
   ClientHeight = 405
   ClientWidth = 441
+  Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnClose = FormClose
+  Left = 616
+  Top = 249
   DesignerMasterStyle = 0
   object BtnBack: TButton
     Locked = True
@@ -73,7 +76,7 @@ object FBriefMahn: TFBriefMahn
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein1: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -96,7 +99,7 @@ object FBriefMahn: TFBriefMahn
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein2: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -119,7 +122,7 @@ object FBriefMahn: TFBriefMahn
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein3: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -142,7 +145,7 @@ object FBriefMahn: TFBriefMahn
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein4: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -165,7 +168,7 @@ object FBriefMahn: TFBriefMahn
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 8
-    Text = 'Warenkorb'
+    Text = 'zur Auswahl'
     OnClick = BtnWarenkorbClick
   end
 end

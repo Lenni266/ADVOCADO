@@ -1,5 +1,7 @@
 unit U_BriefMahn;
 
+{< Form für die Kategorie 'Brief - Mahnbescheid'. }
+
 interface
 
 uses
@@ -34,10 +36,6 @@ type
     procedure BtnBerufungClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnWarenkorbClick(Sender: TObject);
-  private
-    { Private-Deklarationen }
-  public
-    { Public-Deklarationen }
   end;
 
 var

@@ -1,15 +1,18 @@
 object FSettings: TFSettings
-  Left = 0
-  Top = 0
+  Left = 689
+  Top = 321
   BorderStyle = Single
   Caption = 'Einstellungen'
-  ClientHeight = 320
+  ClientHeight = 156
   ClientWidth = 286
+  Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnActivate = FormActivate
   OnClose = FormClose
+  Left = 689
+  Top = 321
   DesignerMasterStyle = 0
   object LblFR: TLabel
     Position.X = 15.000000000000000000
@@ -21,7 +24,7 @@ object FSettings: TFSettings
   end
   object BtnBack: TButton
     Position.X = 144.000000000000000000
-    Position.Y = 288.000000000000000000
+    Position.Y = 128.000000000000000000
     Size.Width = 136.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -71,17 +74,6 @@ object FSettings: TFSettings
     Text = 'Leitzins abrufen'
     OnClick = BtnUpdateFRClick
   end
-  object ChkBxDark: TCheckBox
-    Enabled = False
-    Position.X = 13.000000000000000000
-    Position.Y = 106.000000000000000000
-    Size.Width = 169.000000000000000000
-    Size.Height = 19.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 7
-    Text = 'dunkles Theme aktivieren'
-    OnChange = ChkBxDarkChange
-  end
   object LblLoadFR: TLabel
     AutoSize = True
     StyledSettings = [Family, Size, Style]
@@ -111,8 +103,8 @@ object FSettings: TFSettings
   object BtnApply: TButton
     Enabled = False
     Position.X = 56.000000000000000000
-    Position.Y = 288.000000000000000000
-    TabOrder = 8
+    Position.Y = 128.000000000000000000
+    TabOrder = 7
     Text = 'Anwenden'
     OnClick = BtnApplyClick
   end

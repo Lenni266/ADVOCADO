@@ -1,4 +1,4 @@
-unit U_FRUpdater;
+ï»¿unit U_FRUpdater;
 
 {< Abrufen und Auslesen des Leitzinses. }
 
@@ -8,14 +8,13 @@ uses System.Classes, System.SysUtils, IdHTTP, U_Utils;
 
 type
   { @abstract(Ruft den aktuellen Leitzins ab und liest ihn aus einer lokaler Datei.)
-    Diese Klasse ermöglicht das Abrufen des aktuellen EZB-Leitzinses aus dem Internet über die API des @italic(Statistical Data Warehouse) der EZB.
-    Außerdem enthält sie einige Funktionen, die bei der Abfrage helfen. }
+    Diese Klasse ermÃ¶glicht das Abrufen des aktuellen EZB-Leitzinses aus dem Internet Ã¼ber die API des @italic(Statistical Data Warehouse) der EZB.
+    AuÃŸerdem enthÃ¤lt sie einige Funktionen, die bei der Abfrage helfen. }
   TFRUpdater = class
     private
-      { In der Klasse abgespeicherte URL. }
+      { Im Objekt abgespeicherte URL. }
       FURL: string;
-      { @abstract(Absoluter Pfad zur Datei, welche den Leitzins enthält.)
-        Absoluter Absoluter Pfad zur Datei, welche den Leitzins enthält.
+      { Absoluter Absoluter Pfad zur Datei, welche den Leitzins enthÃ¤lt.
         Wird generiert durch den in @link(Create) angegebenen Dateinamen und das aktuelle Verzeichnis. }
       FFileName: string;
       { Gibt eine Internetseite als String aus.
@@ -23,21 +22,23 @@ type
         @returns Der Inhalt der Seite als @bold(String). }
       function GetPage(aURL: string): string;
     public
-      { Ruft den den aktuellen EZB-Leitzins aus dem Internet über die API des @italic(Statistical Data Warehouse) der EZB ab.
+      { Im Objekt abgespeicherter Leitzins. }
+      var FR: real;
+
+      { Ruft den den aktuellen EZB-Leitzins aus dem Internet Ã¤ber die API des @italic(Statistical Data Warehouse) der EZB ab.
         Dieser wird in die durch @link(FFileName) spezifizierte Datei als Float (z.B. @code(0,000)) abgespeichert. }
       procedure updateFR;
       { Liest den EZB-Leitzins aus der in @link(Create) angegebenen Datei aus.
         Die Datei muss sich im aktuellen Verzeichnis befinden.
         @returns Der Leitzins als @bold(Float). }
       function readFR: real;
-
-      var FR: real;
-
+      { Speichert den Ã¼bergebenen Leitzins in die durch @link(FFileName) spezifizierte Datei als @bold(Float) (z.B. @code(0,000)).
+        @param FR Der Leitzins als @bold(Float).}
       procedure writeFRToFile(FR: real);
-      { Überprüft ob Verbindung zu @link(FURL) besteht.
+      { ÃœberprÃ¼ft ob Verbindung zu @link(FURL) besteht.
         @returns Falls Verbindung besteht: @true, ansonsten @false. }
       function HasInternet: boolean;
-      { Überprüft ob die Datei an @link(FFileName) existiert.
+      { ÃœberprÃ¼ft ob die Datei an @link(FFileName) existiert.
         @returns Falls sie existiert: @true, ansonsten @false.}
       function FileExist: boolean;
 
@@ -55,10 +56,18 @@ type
 implementation
 
 constructor TFRUpdater.Create(URL: string; FileName: string);
+var
+  dirPath: string;
 begin
   FURL:= URL;
-  FFileName:= GetCurrentDir + '\' + FileName;
 
+  dirPath := GetEnvironmentVariable('APPDATA') + '\AdvoCat\';
+  if not DirectoryExists(dirPath) then
+  begin
+    CreateDir(dirPath);
+  end;
+
+  FFileName:= dirPath + '\' + FileName;
 end;
 
 // Leitzins herunterladen und in Datei in aktuellen Verzeichnis, in dem das Programm ausgefuehrt wird, schreiben
@@ -125,7 +134,7 @@ begin
   end;
 end;
 
-// Überprüfen, ob der Leitzins schon im aktuellen Verzeichnis gespeichert ist
+// ÃœberprÃ¼fen, ob der Leitzins schon im aktuellen Verzeichnis gespeichert ist
 function TFRUpdater.FileExist: boolean;
 begin
   result:= FileExists(FFileName);

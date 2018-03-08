@@ -1,11 +1,15 @@
 unit U_Settings;
 
+{< Unit für das Vornehmen von Änderungen am EZB-Leitzins.}
+
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox, FMX.Ani, U_Utils;
+  FMX.Controls.Presentation, FMX.Edit, FMX.EditBox, FMX.NumberBox, FMX.Ani,
+
+  U_Utils;
 
 type
   TFSettings = class(TForm)
@@ -14,7 +18,6 @@ type
     LblSettings: TLabel;
     NmBxFR: TNumberBox;
     BtnUpdateFR: TButton;
-    ChkBxDark: TCheckBox;
     LblLoadFR: TLabel;
     Ein1: TFloatAnimation;
     Aus1: TFloatAnimation;
@@ -26,13 +29,13 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnApplyClick(Sender: TObject);
     procedure NmBxFRChange(Sender: TObject);
-    procedure ChkBxDarkChange(Sender: TObject);
     procedure NmBxFRKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
   private
+    { Liest den in @link(NmBxFR) eingegebenen Leitzins ein.
+      Falls er sich von dem bereits abgespeichertem Leitzins unterscheidet, wird er in die Datei @link(U_FRUpdater.TFRUpdater.FFileName) geschrieben. }
     procedure setNewFR;
-  public
-    { Public-Deklarationen }
+
   end;
 
 var
@@ -116,13 +119,8 @@ end;
 procedure TFSettings.NmBxFRKeyDown(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);
 begin
-  if (keychar in myNum) and (key <> ord(#8)) and (key <> vkDelete) then
+  if (keychar in numKeys) and (key <> ord(#8)) and (key <> vkDelete) then
     BtnApply.Enabled := true;
-end;
-
-procedure TFSettings.ChkBxDarkChange(Sender: TObject);
-begin
-  BtnApply.Enabled := true;
 end;
 
 end.

@@ -1,33 +1,77 @@
 ﻿unit U_RVG;
 
+{< Berechnung der Einfachgebühr, der Gerichtskosten und aller möglichen Fälle. }
+
 interface
 
 uses System.SysUtils;
 
-{ Berechnet die Einfachgebuehr nach dem RVG
+{ Berechnet die Einfachgebühr nach dem RVG.
   @param streitwert Der Streitwert des Falls.
   @returns Die berechnete Einfachgebuehr als @bold(Float). }
   function calcEinfach(streitwert: real): real;
+{ Berechnet die Gerichtskostengebühr nach dem GKG.
+  @param streitwert Der Streitwert des Falls.
+  @returns Die berechneten Gerichtskostengebühr als @bold(Float). }
   function calcGKG(streitwert: real): real;
 
-  function calcBrief(streitwert: real): real; //stimmt tom
+{ Berechnet die Kosten eines Briefs.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs. }
+  function calcBrief(streitwert: real): real;
 
-  function calcBriefMahn(streitwert: real): real; //stimmt Tom
-  function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
-  function calcBriefMahnKlageVergleich(streitwert: real): real; //Stimmt Tom
-  function calcBriefMahnKlageBerufung(streitwert: real): real;//stimmt tom
+{ Berechnet die Kosten eines Briefs mit einem Mahnbescheid.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit Mahnbescheid. }
+  function calcBriefMahn(streitwert: real): real;
+{ Berechnet die Kosten eines Briefs mit einer darauf folgenden Klage und einem Gerichtsverfahren.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit einer darauf folgenden Klage und einem Gerichtsverfahren. }
+  function calcBriefMahnKlageGerichtVerlieren(streitwert: real): real;
+{ Berechnet die Kosten eines Briefs mit einer darauf folgenden Klage und einem Vergleich.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit einer darauf folgenden Klage und einem Vergleich. }
+  function calcBriefMahnKlageVergleich(streitwert: real): real;
+{ Berechnet die Kosten eines Briefs mit einer darauf folgenden Klage und eingegangener Berufung.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit einer darauf folgenden Klage und eingegangener Berufung. }
+  function calcBriefMahnKlageBerufung(streitwert: real): real;
 
-  function calcBriefMahnvollBesch(streitwert: real): real; //stimmt Tom
-  function calcBriefMahnvollBeschVoll(streitwert: real): real; //Stimmt tom
+{ Berechnet die Kosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid. }
+  function calcBriefMahnvollBesch(streitwert: real): real;
+{ Berechnet die Kosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid mit Vollstreckung.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit einem Mahnbescheid und einem Vollstreckungsbescheid mit Vollstreckung. }
+  function calcBriefMahnvollBeschVoll(streitwert: real): real;
 
-  function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real; //Stimmt tom
+{ Berechnet die Kosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Gerichtsverfahren.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Gerichtsverfahren. }
+  function calcBriefMahnVollBeschKlageGerichtVerlieren(streitwert: real): real;
+{ Berechnet die Kosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Vergleich.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und einem Vergleich. }
   function calcBriefMahnVollBeschKlageVergleich(streitwert: real): real;
+{ Berechnet die Kosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und eingegangener Berufung.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten eines Briefs mit Mahnbescheid und einem Vollstreckungsbescheid mit darauf folgender Klage und eingegangener Berufung. }
   function calcBriefMahnVollBeschKlageBerufung(streitwert: real): real;
 
+{ Berechnet die Kosten einer direkten Klage mit Gerichtsverfahren.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten einer direkten Klage mit Gerichtsverfahren. }
   function calcKlageGerichtVerlieren(streitwert: real): real;
 
+{ Berechnet die Kosten einer direkten Klage mit Vergleich.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten einer direkten Klage mit Vergleich. }
   function calcKlageVergleich(streitwert: real): real;
 
+{ Berechnet die Kosten einer direkten Klage mit eingegangener Berufung.
+  @param streitwert Der Streitwert des Falls. Die weitere Berechnung der Kosten erfolgt, nachdem dieser durch die Funktion @link(calcEinfach) in die Einfachgebühr umgerechnet wurde.
+  @returns Die Gesamtkosten einer direkten Klage mit eingegangener Berufung. }
   function calcKlageBerufung(streitwert: real): real;
 
 

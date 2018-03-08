@@ -1,5 +1,7 @@
 unit U_BriefMahnVoll;
 
+{< Form für die Kategorie 'Brief - Mahnung Vollstreckungsbescheid'. }
+
 interface
 
 uses
@@ -39,10 +41,6 @@ type
     procedure BtnKlageVerglClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnWarenkorbClick(Sender: TObject);
-  private
-    { Private-Deklarationen }
-  public
-    { Public-Deklarationen }
   end;
 
 var

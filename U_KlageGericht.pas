@@ -1,5 +1,7 @@
 unit U_KlageGericht;
 
+{< Form für die Kategorie 'Direkte Klage'. }
+
 interface
 
 uses
@@ -29,10 +31,6 @@ type
     procedure BtnBerufClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnWarenkorbClick(Sender: TObject);
-  private
-    { Private-Deklarationen }
-  public
-    { Public-Deklarationen }
   end;
 
 var

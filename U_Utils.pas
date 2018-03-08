@@ -1,20 +1,34 @@
-unit U_Utils;
+﻿unit U_Utils;
+
+{< Sammlung von praktischen Methoden. }
 
 interface
 
 uses FMX.Grid, FMX.Controls, System.Classes, System.SysUtils, System.UITypes;
 
 type
+  { Dynamisches Array des Typs @bold(Integer). }
   TIntArray = array of integer;
 
+{ Löscht ein Objekt aus einem dynamischen Array des Typs @link(TIntArray), ohne das eine Lücke entsteht.
+  @param AArray Ein dynamischer Array des Typs @link(TIntArray).
+  @param AIndex Index des zu löschenden Elements. }
 procedure DelIntArrElement(var AArray: TIntArray; const AIndex: Integer);
-procedure DelayedSetFocus(control : TControl);
+{ Ermöglicht das synchrone fokussieren eines @bold(TControl)-Objekts.
+  @param AControl Ein @bold(TControl)-Objekt. }
+procedure DelayedSetFocus(AControl : TControl);
+{ Überprüft ob der übergebene @bold(String) als @bold(Float) dargestellt werden kann.
+  @param s Ein @bold(String).
+  @returns Falls der String als Float dargestellt werden kann @true, ansonsten @false. }
 function IsStrFloatNum(s: string): Boolean;
 
-const myNum = ['0','1','2','3','4','5','6','7','8','9','0'];
+{ Array von Chars, welche eine Zahl darstellen (0-9). }
+const numKeys = ['0','1','2','3','4','5','6','7','8','9','0'];
+{ Array von Virtual Keys, welche bei der Eingabe in ein Edit-Feld benötigt werden. }
 const navKeys = [vkDelete, vkBack, vkLeft, vkRight];
 
 implementation
+
 
 procedure DelIntArrElement(var AArray: TIntArray; const AIndex: Integer);
 begin
@@ -25,7 +39,7 @@ begin
   end;
 end;
 
-procedure DelayedSetFocus(control : TControl);
+procedure DelayedSetFocus(AControl : TControl);
 begin
   TThread.CreateAnonymousThread(
     procedure
@@ -33,13 +47,12 @@ begin
       TThread.Synchronize( nil,
          procedure
          begin
-           control.SetFocus;
+           AControl.SetFocus;
          end
       );
     end
   ).Start;
 end;
-
 
 function IsStrFloatNum(s: string): Boolean;
 begin

@@ -1,14 +1,17 @@
 object FBriefMahnVoll: TFBriefMahnVoll
-  Left = 0
-  Top = 0
+  Left = 623
+  Top = 223
   BorderStyle = Single
   Caption = 'Brief-Mahnung Vollstreckungsbescheid'
   ClientHeight = 452
   ClientWidth = 441
+  Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnClose = FormClose
+  Left = 623
+  Top = 223
   DesignerMasterStyle = 0
   object BtnBack: TButton
     Locked = True
@@ -84,7 +87,7 @@ object FBriefMahnVoll: TFBriefMahnVoll
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein1: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -107,7 +110,7 @@ object FBriefMahnVoll: TFBriefMahnVoll
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein2: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -130,7 +133,7 @@ object FBriefMahnVoll: TFBriefMahnVoll
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein3: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -153,7 +156,7 @@ object FBriefMahnVoll: TFBriefMahnVoll
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein4: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -176,7 +179,7 @@ object FBriefMahnVoll: TFBriefMahnVoll
     Size.Width = 161.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Dem Warenkorb hinzugef'#252'gt!'
+    Text = 'Der Auswahl hinzugef'#252'gt!'
     object Ein5: TFloatAnimation
       Duration = 0.200000002980232200
       PropertyName = 'Opacity'
@@ -199,7 +202,7 @@ object FBriefMahnVoll: TFBriefMahnVoll
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 8
-    Text = 'Warenkorb'
+    Text = 'zur Auswahl'
     OnClick = BtnWarenkorbClick
   end
 end
