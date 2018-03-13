@@ -58,17 +58,18 @@ Count=1
 Item_0=..\..\AdvoCat
 
 [Files]
-Count=10
+Count=11
 Item_0=..\U_BriefMahn.pas
 Item_1=..\U_BriefMahnVoll.pas
 Item_2=..\U_FRUpdater.pas
-Item_3=..\U_KlageGericht.pas
-Item_4=..\U_RVG.pas
-Item_5=..\U_Settings.pas
-Item_6=..\U_TWarenkorb.pas
-Item_7=..\U_Uebersicht.pas
-Item_8=..\U_Utils.pas
-Item_9=..\U_Warenkorb.pas
+Item_3=..\U_Handbuch.pas
+Item_4=..\U_KlageGericht.pas
+Item_5=..\U_RVG.pas
+Item_6=..\U_Settings.pas
+Item_7=..\U_TWarenkorb.pas
+Item_8=..\U_Uebersicht.pas
+Item_9=..\U_Utils.pas
+Item_10=..\U_Warenkorb.pas
 
 [HyphenatedWords]
 Count=0
