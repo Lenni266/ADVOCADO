@@ -1,0 +1,242 @@
+object FHandbuch: TFHandbuch
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'Handbuch'
+  ClientHeight = 529
+  ClientWidth = 568
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 19.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 225.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Benutzerhandbuch - AdvoCat'
+    TabOrder = 12
+  end
+  object Label2: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 19.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000200000004000000}
+    Text = 'Was ist AdvoCat?'
+    TabOrder = 11
+  end
+  object Label3: TLabel
+    AutoSize = True
+    Position.X = 19.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 321.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Um eine '#220'bersicht zu erhalten folgt man diesen Schritten:'
+    TabOrder = 10
+  end
+  object Label4: TLabel
+    AutoSize = True
+    Position.X = 19.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 521.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      'AdvoCat bietet die M'#246'glichkeit, das Risiko f'#252'r Anwaltskosten ein' +
+      'se m'#246'glichen Rechtsstreits schnell abzusch'#228'tzen. Es liefert eine' +
+      'n soliden '#220'berblick, aber keine exakte und vollst'#228'ndige Berechnu' +
+      'ng.'
+    TabOrder = 9
+  end
+  object Label5: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 19.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000200000004000000}
+    Text = 'Wie funktioniert es?'
+    TabOrder = 8
+  end
+  object Label6: TLabel
+    AutoSize = True
+    Position.X = 43.000000000000000000
+    Position.Y = 180.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Streitwert eingeben (dabei auf ganzzahlige Eingaben achten)'
+    TabOrder = 6
+  end
+  object Label7: TLabel
+    AutoSize = True
+    Position.X = 43.000000000000000000
+    Position.Y = 202.000000000000000000
+    Size.Width = 393.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      'Kategorie der m'#246'glichen F'#228'lle ausw'#228'hlen und auf '#39'Hinzuf'#252'gen'#39' kli' +
+      'cken'
+    TabOrder = 5
+  end
+  object Label8: TLabel
+    AutoSize = True
+    Position.X = 40.000000000000000000
+    Position.Y = 226.000000000000000000
+    Size.Width = 513.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      'Falls es weitere Teilf'#228'lle gibt, '#246'ffnet sich automatisch die Aus' +
+      'wahl. Dort k'#246'nnen die    gew'#252'nschten Teilf'#228'lle hinzugef'#252'gt werde' +
+      'n.'
+    TabOrder = 4
+  end
+  object Label9: TLabel
+    AutoSize = True
+    Position.X = 43.000000000000000000
+    Position.Y = 266.000000000000000000
+    Size.Width = 513.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      'Anschlie'#223'end kann man auf '#39'Weiteres hinzuf'#252'gen'#39' oder '#39'zur Auswah' +
+      'l'#39' klicken. '#39'Weiteres hinzuf'#252'gen'#39' f'#252'hrt wieder zur'#252'ck zum Startb' +
+      'ildschirm. '
+    TabOrder = 3
+  end
+  object Label10: TLabel
+    AutoSize = True
+    Position.X = 43.000000000000000000
+    Position.Y = 306.000000000000000000
+    Size.Width = 513.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      'Hat man alle m'#246'glichen F'#228'lle ausgew'#228'hlt, klickt man unten rechts' +
+      ' auf '#39'zur Auswahl'#39'. So gelangt man zum Auswahlfenster, in dem al' +
+      'le F'#228'lle mit bereits berechnetem Preis aufgelistet sind. Des Wei' +
+      'teren kann man hier mit einem Klick auf das Kreuz hinzugef'#252'gte F' +
+      #228'lle entfernen, '#39'Weiteres hinzuf'#252'gen'#39', falls n'#246'tig, oder die ges' +
+      'amte '#39'Liste leeren'#39'.'
+    TabOrder = 2
+  end
+  object Label11: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 19.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 94.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000200000004000000}
+    Text = 'Einstellungen'
+    TabOrder = 7
+  end
+  object Label12: TLabel
+    AutoSize = True
+    Position.X = 19.000000000000000000
+    Position.Y = 418.000000000000000000
+    Size.Width = 513.000000000000000000
+    Size.Height = 80.000000000000000000
+    Size.PlatformDefault = False
+    Text = 
+      #220'ber einen Klick auf das Zahnrad in der '#220'bersicht gelangt man zu' +
+      ' den Einstellungen. Wenn man den Leitzins aktualisieren m'#246'chte u' +
+      'nd keine Internetverbindung hat, kann man dies tun, indem man de' +
+      'n gew'#252'nschten Leitzins eingibt und auf '#39'Anwenden'#39' klickt. Bei be' +
+      'stehender Internetverbindung kann man diesen durch einen Klick a' +
+      'uf die entsprechende Schaltfl'#228'che abrufen.'
+    TabOrder = 1
+  end
+  object Label13: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 19.000000000000000000
+    Position.Y = 504.000000000000000000
+    Size.Width = 382.000000000000000000
+    Size.Height = 15.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.Font.StyleExt = {00040000000200000004000000}
+    Text = 
+      'Ein Klick auf das Logo in der '#220'bersicht wechselt in das dunkle D' +
+      'esign.'
+    TabOrder = 0
+  end
+  object Label14: TLabel
+    AutoSize = True
+    Position.X = 24.000000000000000000
+    Position.Y = 180.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = '1.'
+    TabOrder = 17
+  end
+  object Label15: TLabel
+    AutoSize = True
+    Position.X = 24.000000000000000000
+    Position.Y = 202.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = '2.'
+    TabOrder = 16
+  end
+  object Label16: TLabel
+    AutoSize = True
+    Position.X = 24.000000000000000000
+    Position.Y = 226.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = '3.'
+    TabOrder = 15
+  end
+  object Label17: TLabel
+    AutoSize = True
+    Position.X = 24.000000000000000000
+    Position.Y = 266.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = '4.'
+    TabOrder = 14
+  end
+  object Label18: TLabel
+    AutoSize = True
+    Position.X = 24.000000000000000000
+    Position.Y = 306.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = '5.'
+    TabOrder = 13
+  end
+  object BtnBack: TButton
+    StyledSettings = [Family, Size, Style]
+    Position.X = 472.000000000000000000
+    Position.Y = 496.000000000000000000
+    TabOrder = 18
+    Text = 'Zur'#252'ck'
+    OnClick = BtnBackClick
+  end
+end

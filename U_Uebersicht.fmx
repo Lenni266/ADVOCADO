@@ -3555,7 +3555,17 @@ object FUebersicht: TFUebersicht
           7006157363726F6C6C626172626F74746F6D627574746F6E085461624F726465
           72020000000000}
       end>
-    Left = 32
-    Top = 248
+    Left = 128
+    Top = 216
+  end
+  object BtnHelp: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = 'Handbuch'
+    OnClick = BtnHelpClick
   end
 end

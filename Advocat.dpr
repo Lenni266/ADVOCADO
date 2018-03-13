@@ -1,5 +1,7 @@
 program Advocat;
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -12,7 +14,8 @@ uses
   U_FRUpdater in 'U_FRUpdater.pas',
   U_RVG in 'U_RVG.pas',
   U_TWarenkorb in 'U_TWarenkorb.pas',
-  U_Utils in 'U_Utils.pas';
+  U_Utils in 'U_Utils.pas',
+  U_Handbuch in 'U_Handbuch.pas' {FHandbuch};
 
 {$R *.res}
 
@@ -24,6 +27,7 @@ begin
   Application.CreateForm(TFBriefMahn, FBriefMahn);
   Application.CreateForm(TFWare, FWare);
   Application.CreateForm(TFSettings, FSettings);
+  Application.CreateForm(TFHandbuch, FHandbuch);
   Application.Run;
 end.
 

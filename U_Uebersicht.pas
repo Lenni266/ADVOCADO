@@ -28,6 +28,7 @@ type
     Aus1: TFloatAnimation;
     ImgLogo: TImage;
     StBkDark: TStyleBook;
+    BtnHelp: TButton;
     procedure BtnAddClick(Sender: TObject);
     procedure BtnWarenkorbClick(Sender: TObject);
     procedure BtnSettingClick(Sender: TObject);
@@ -37,6 +38,7 @@ type
     procedure EdtStreitwertKeyDown(Sender: TObject; var Key: Word;
       var KeyChar: Char; Shift: TShiftState);
     procedure ImgLogoClick(Sender: TObject);
+    procedure BtnHelpClick(Sender: TObject);
   end;
 
 var
@@ -51,7 +53,7 @@ implementation
 {$R *.fmx}
 
 uses U_BriefMahnVoll, U_KlageGericht, U_BriefMahn, U_Warenkorb,
-  U_RVG;
+  U_RVG, U_Handbuch;
 
 {$R *.Windows.fmx MSWINDOWS}
 
@@ -138,6 +140,11 @@ begin
               end;
     end;
   end;
+end;
+
+procedure TFUebersicht.BtnHelpClick(Sender: TObject);
+begin
+  FHandbuch.Show;
 end;
 
 procedure TFUebersicht.BtnSettingClick(Sender: TObject);
