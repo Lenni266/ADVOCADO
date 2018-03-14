@@ -55,7 +55,7 @@ object FUebersicht: TFUebersicht
       '- Fall ausw'#228'hlen -'
       'Brief'
       'Brief - Mahnbescheid'
-      'Brief - Mahnung Vollstreckungsbescheid'
+      'Brief - Mahnung Vollstr.-besch.'
       'Direkte Klage')
     ItemIndex = 0
     Position.X = 16.000000000000000000

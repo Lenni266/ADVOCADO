@@ -38,13 +38,13 @@ type
       {0}   ('Brief'),
 
       {1}   ('Brief-Mahn'),
-      {2}   ('Brief-Mahn-Klage-Gericht-Verlieren'),
+      {2}   ('Brief-Mahn-Klage-Gericht-V.'),
       {3}   ('Brief-Mahn-Klage-Vergleich'),
       {4}   ('Brief-Mahn-Klage-Berufung'),
 
       {5}   ('Brief-Mahn-Vollbesch'),
       {6}   ('Brief-Mahn-VollBesch-Voll'),
-      {7}   ('Brief-Mahn-VollBesch-Klage-Gericht-Verlieren'),
+      {7}   ('Brief-Mahn-VollBesch-Klage-Gericht-V.'),
       {8}   ('Brief-Mahn-VollBesch-Klage-Vergleich'),
       {9}   ('Brief-Mahn-VollBesch-Klage-Berufung'),
 
